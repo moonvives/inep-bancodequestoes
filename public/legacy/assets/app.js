@@ -140,10 +140,15 @@
         (next ? '<a class="btn" href="questao.html?q=' + next.numero + '">Próxima: ' + next.codigo + "</a>" : "<span></span>") +
       "</div>" +
       '<div class="detail-grid">' +
-        '<div class="card">' +
+        '<div class="card question-card">' +
           "<h2>" + q.codigo + " · Habilidade " + q.habilidade + " " + tierHtml(q) + "</h2>" +
           '<p style="color:var(--muted);margin-top:0">' + q.habilidade_descricao + "</p>" +
-          '<div class="enunciado">' + (q.enunciado || "Enunciado não disponível nesta extração.") + "</div>" +
+          '<div class="question-source-heading"><strong>Questão completa</strong><span>Enunciado, elementos visuais e alternativas originais</span></div>' +
+          '<div class="question-document" id="question-document" data-question="' + q.numero + '" aria-busy="true">' +
+            '<div class="question-loading">Carregando a questão completa</div>' +
+            '<canvas aria-label="Questão ' + q.codigo + ' completa"></canvas>' +
+          '</div>' +
+          '<div class="question-text-fallback">' + (q.enunciado || "Enunciado não disponível nesta extração.") + "</div>" +
         "</div>" +
         "<div>" +
           '<div class="card" style="margin-bottom:1.25rem">' +
@@ -167,6 +172,8 @@
       "</div>" +
       '<div class="card" style="margin-top:1.25rem"><h2>Competência ' + q.competencia + "</h2>" +
         '<p style="color:var(--muted);margin:0">' + q.competencia_descricao + "</p></div>";
+
+    document.dispatchEvent(new CustomEvent("enem:question-ready", { detail: { number: q.numero } }));
   }
   function li(k, v) { return '<li><span class="k">' + k + '</span><span class="v">' + v + "</span></li>"; }
 
