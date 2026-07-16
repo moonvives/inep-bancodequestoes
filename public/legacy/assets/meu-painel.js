@@ -89,7 +89,7 @@
         var q = qById[e.id] || {};
         return '<a class="revitem" href="questao.html?q=' + (q.numero || "") + '">' +
           '<span><span class="code">' + e.id + "</span> · H" + (e.hab || "?") + " · " + (q.aplicacao || "") + "</span>" +
-          '<span class="tier t5"><span class="dot"></span>errei</span></a>';
+          '<span class="tier t5">errei</span></a>';
       }).join("") + "</div>" +
       '<div style="margin-top:1rem"><a class="btn" href="estudar.html#revisar" style="background:var(--brand);color:#fff;border-color:var(--brand)">Revisar meus erros no modo Estudar</a></div>';
     }

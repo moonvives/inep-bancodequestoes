@@ -111,7 +111,7 @@
           '<div class="feedback" id="fb"></div>' +
           '<div class="studybar"><span class="miniprog">Questão <b>' + (pos + 1) + "</b> de <b>" + queue.length +
             "</b> · sessão: <b>" + correct + "/" + answered + "</b></span>" +
-            '<button class="btn" id="next" style="display:none">Próxima →</button></div>' +
+            '<button class="btn" id="next" style="display:none">Próxima questão</button></div>' +
         "</div>";
 
       var done = false;
@@ -128,12 +128,10 @@
             else if (L === chosen) b2.classList.add("wrong");
           });
           var fb = document.getElementById("fb");
-          var svgOk = '<svg class="ico" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>';
-          var svgNo = '<svg class="ico" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>';
           fb.className = "feedback " + (ok ? "ok" : "no");
           fb.innerHTML = ok
-            ? svgOk + "<span>Correto. Gabarito <b>" + q.gabarito + "</b>.</span>"
-            : svgNo + "<span>Incorreto. Resposta correta: <b>" + q.gabarito + "</b>. Item registrado para revisão.</span>";
+            ? "<span>Correto. Gabarito <b>" + q.gabarito + "</b>.</span>"
+            : "<span>Incorreto. Resposta correta: <b>" + q.gabarito + "</b>. Item registrado para revisão.</span>";
           Tracker.record({ id: q.id, fonte: q.fonte, area: q.area, habilidade: q.habilidade, b: q.b, tier: q.tier, escolha: chosen, correta: ok });
           document.getElementById("next").style.display = "";
         });

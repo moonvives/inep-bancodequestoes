@@ -202,18 +202,21 @@ svg.ico{stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke
 
 /* Visual da nova cópia: a base funcional permanece intacta. */
 :root{
-  --bg:#f5f3ec;--surface:#fffefa;--surface-2:#efede5;--border:#d8d5ca;
-  --text:#071827;--muted:#61717d;--brand:#087c5d;--brand-ink:#075c47;
-  --accent:#42df9b;--radius:14px;
-  --shadow:0 14px 40px rgba(7,24,39,.08);
+  --bg:#f3eee8;--surface:#fcfaf7;--surface-2:#e9dfd8;--border:#d7cbc3;
+  --text:#2b1c24;--muted:#746970;--brand:#9b4a5a;--brand-ink:#743443;
+  --accent:#a66f52;--radius:14px;
+  --t1:#806773;--t2:#9a737c;--t3:#a77b5f;--t4:#92525c;--t5:#713746;
+  --shadow:0 14px 40px rgba(55,31,42,.08);
 }
 @media (prefers-color-scheme:dark){
-  :root{--bg:#06131e;--surface:#0b2030;--surface-2:#112b3d;--border:#274052;--text:#f3f5f2;--muted:#9babb5;--brand:#42df9b;--brand-ink:#65e8ad;--accent:#42df9b}
+  :root{--bg:#24171e;--surface:#33212a;--surface-2:#402a35;--border:#5b414d;--text:#fffaf6;--muted:#c5b5bc;--brand:#c38491;--brand-ink:#e0aab5;--accent:#d2a183}
 }
-body{letter-spacing:-.006em}
+body{font-family:"Avenir Next","Helvetica Neue",Helvetica,Arial,sans-serif;letter-spacing:-.006em}
+h1,h2,h3{font-family:Baskerville,"Iowan Old Style","Palatino Linotype",serif;font-weight:600;letter-spacing:-.025em}
 .site-header{backdrop-filter:blur(18px);background:color-mix(in srgb,var(--surface) 92%,transparent)}
 .site-header .wrap{min-height:74px}
 .brand strong{letter-spacing:-.025em}
+.brand .dot,.tier .dot,.ico{display:none!important}
 nav.main a{font-size:.78rem;padding:.55rem .72rem}
 nav.main a.active{background:var(--text);color:var(--surface)}
 .wrap{max-width:1240px}

@@ -1,9 +1,9 @@
 const difficulty = [
-  { label: "Muito fácil", value: 116, color: "#0f9f78" },
-  { label: "Fácil", value: 161, color: "#60b977" },
-  { label: "Mediana", value: 155, color: "#e3a72f" },
-  { label: "Difícil", value: 78, color: "#e06e3f" },
-  { label: "Muito difícil", value: 26, color: "#ce3f55" },
+  { label: "Muito fácil", value: 116, color: "#8e7180" },
+  { label: "Fácil", value: 161, color: "#aa7b84" },
+  { label: "Mediana", value: 155, color: "#b98a6a" },
+  { label: "Difícil", value: 78, color: "#9b5961" },
+  { label: "Muito difícil", value: 26, color: "#713746" },
 ];
 
 const routes = [
@@ -44,16 +44,16 @@ export default function Home() {
               {difficulty.map(d => <span key={d.label} style={{ width: `${(d.value / 536) * 100}%`, background: d.color }} title={`${d.label}: ${d.value}`} />)}
             </div>
             <div className="legend">
-              {difficulty.map(d => <span key={d.label}><i style={{ background: d.color }} />{d.label}<b>{d.value}</b></span>)}
+              {difficulty.map(d => <span key={d.label} style={{ borderColor: d.color }}>{d.label}<b>{d.value}</b></span>)}
             </div>
           </div>
         </div>
       </section>
 
       <section className="signal-strip">
-        <span>4 áreas do conhecimento</span><i />
-        <span>30 habilidades por área</span><i />
-        <span>8 competências em Natureza</span><i />
+        <span>4 áreas do conhecimento</span>
+        <span>30 habilidades por área</span>
+        <span>8 competências em Natureza</span>
         <span>18 anos de microdados</span>
       </section>
 
@@ -68,7 +68,7 @@ export default function Home() {
               <div className="route-top"><span>{route.n}</span><small>{route.meta}</small></div>
               <h3>{route.title}</h3>
               <p>{route.text}</p>
-              <b>Entrar <span aria-hidden="true">↗</span></b>
+              <b>Acessar</b>
             </a>
           ))}
         </div>

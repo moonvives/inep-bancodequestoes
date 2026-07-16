@@ -42,7 +42,7 @@ export default function Matriz() {
                 <span className="competency-number">C{String(comp).padStart(2,"0")}</span>
                 <span className="competency-title"><small>Competência de área {comp}</small><strong>{rows[0]?.competencia_descricao}</strong></span>
                 <span className="competency-count">{rows.length} habilidades</span>
-                <span className="toggle">{active ? "−" : "+"}</span>
+                <span className="toggle">{active ? "Fechar" : "Abrir"}</span>
               </button>
               {active && <div className="skill-list">{rows.map(row => <div className="skill-row" key={row.codigo}><strong>{row.codigo}</strong><p>{row.descricao}</p><span>Competência {row.competencia}</span></div>)}</div>}
             </article>

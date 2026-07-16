@@ -9,7 +9,6 @@ export const metadata: Metadata = {
   description:
     "Banco de questões do ENEM com matriz de referência, microdados oficiais e análise de dificuldade pela TRI.",
   other: { "codex-preview": "development" },
-  icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
 };
 
 const nav = [
@@ -28,7 +27,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <body>
         <header className="topbar">
           <a className="wordmark" href="/" aria-label="INEP Atlas — início">
-            <span className="wordmark-mark">IA</span>
             <span className="wordmark-copy">
               <strong>INEP Atlas</strong>
               <small>Inteligência para o ENEM</small>

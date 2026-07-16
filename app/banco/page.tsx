@@ -65,7 +65,6 @@ export default function Banco() {
               <p>{q.enunciado || "Enunciado não disponível nesta extração."}</p>
             </div>
             <div className="question-tri"><small>TRI · b</small><strong>{q.b_texto || "—"}</strong><span className={`tier tier-${q.tier?.nivel || 0}`}>{q.tier?.rotulo || "Sem parâmetro"}</span></div>
-            <span className="row-arrow" aria-hidden="true">↗</span>
           </a>
         ))}
         {!filtered.length && questions.length > 0 && <div className="empty-state"><strong>Nenhum item encontrado.</strong><p>Experimente retirar um filtro ou usar outro termo de busca.</p></div>}

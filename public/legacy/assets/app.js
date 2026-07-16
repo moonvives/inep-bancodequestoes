@@ -135,9 +135,9 @@
 
     root.innerHTML =
       '<div class="detail-nav">' +
-        (prev ? '<a class="btn" href="questao.html?q=' + prev.numero + '">← ' + prev.codigo + "</a>" : "<span></span>") +
+        (prev ? '<a class="btn" href="questao.html?q=' + prev.numero + '">Anterior: ' + prev.codigo + "</a>" : "<span></span>") +
         '<a class="btn" href="index.html">Voltar à busca</a>' +
-        (next ? '<a class="btn" href="questao.html?q=' + next.numero + '">' + next.codigo + " →</a>" : "<span></span>") +
+        (next ? '<a class="btn" href="questao.html?q=' + next.numero + '">Próxima: ' + next.codigo + "</a>" : "<span></span>") +
       "</div>" +
       '<div class="detail-grid">' +
         '<div class="card">' +
@@ -307,15 +307,6 @@
       kpi(r.versionados, "No repositório")
     ].join("");
 
-    function icon(t) {
-      return t === "video"
-        ? '<svg class="ico" viewBox="0 0 24 24" style="color:var(--accent)"><rect x="2" y="5" width="14" height="14" rx="2"/><path d="M16 10l6-3v10l-6-3"/></svg>'
-        : '<svg class="ico" viewBox="0 0 24 24" style="color:var(--brand)"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/></svg>';
-    }
-    function linkFor(m) {
-      if (m.no_repositorio && m.caminho) return "../" + m.caminho;
-      return m.download_url;
-    }
     var discs = ["Geral", "Biologia", "Fisica", "Quimica"];
     var nome = { Geral: "Geral", Biologia: "Biologia", Fisica: "Física", Quimica: "Química" };
     var html = "";
@@ -330,9 +321,8 @@
         var tag = m.no_repositorio
           ? '<span class="badge area-biologia">no repo</span>'
           : '<span class="badge hab">Drive</span>';
-        html += '<li><span class="k">' + icon(m.tipo) + " " +
-          '<a href="' + linkFor(m) + '"' + (m.no_repositorio ? "" : ' target="_blank" rel="noopener"') + ">" +
-          m.titulo + "</a>" + (m.subpasta ? ' <span style="color:var(--muted);font-size:.8rem">· ' + m.subpasta + "</span>" : "") +
+        html += '<li><span class="k">' +
+          m.titulo + (m.subpasta ? ' <span style="color:var(--muted);font-size:.8rem">· ' + m.subpasta + "</span>" : "") +
           '</span><span class="v">' + m.tamanho_mb + " MB " + tag + "</span></li>";
       });
       html += "</ul></div>";
