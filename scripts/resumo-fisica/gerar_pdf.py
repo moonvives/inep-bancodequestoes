@@ -131,9 +131,15 @@ def construir_html(dados: dict, meta: dict) -> str:
                   <p>{esc(top["como_cai"])}</p></div>''')
 
             for q_i, q in enumerate(top.get("questoes_resolvidas", []), 1):
-                passos = "".join(f"<li>{esc(p)}</li>" for p in q["resolucao"])
+                def _passo(p):
+                    e = esc(p)
+                    m = re.search(r"(Respostas?:.*)$", e)
+                    if m:
+                        e = e[:m.start()] + f'<span class="resposta">{m.group(1)}</span>'
+                    return f"<li>{e}</li>"
+                passos = "".join(_passo(p) for p in q["resolucao"])
                 corpo.append(f'''<div class="questao">
-                  <div class="q-cab">Questão resolvida {q_i}</div>
+                  <div class="q-cab"><span class="q-badge">{q_i}</span>Questão resolvida</div>
                   <p class="q-enunciado">{esc(q["enunciado"])}</p>
                   <div class="q-res-rotulo">Resolução</div>
                   <ol class="q-passos">{passos}</ol></div>''')
@@ -294,11 +300,15 @@ p.teoria {{ margin: 0 0 2.6mm; text-align: justify; hyphens: auto; }}
 .atalho .box-rotulo {{ color: var(--verde); }}
 
 /* ---------- questões ---------- */
-.questao {{ border: 1px solid var(--linha); border-radius: 1.5mm; margin: 3.5mm 0;
+.questao {{ border: 1px solid var(--linha); border-left: 1mm solid var(--navy);
+           border-radius: 1.5mm; margin: 3.5mm 0;
            page-break-inside: avoid; overflow: hidden; }}
 .q-cab {{ color: var(--navy); font-weight: bold;
          font-size: 8pt; letter-spacing: 0.12em; text-transform: uppercase;
          padding: 2.2mm 4mm 1.8mm; border-bottom: 1px solid var(--linha-suave); }}
+.q-badge {{ display: inline-block; min-width: 4.4mm; height: 4.4mm; line-height: 4.4mm;
+           text-align: center; background: var(--navy); color: #fff; border-radius: 50%;
+           font-size: 7.4pt; margin-right: 2.4mm; letter-spacing: 0; }}
 .q-enunciado {{ padding: 2.6mm 4mm 1mm; font-style: italic; color: #3c4454;
                font-size: 8.9pt; }}
 .q-res-rotulo {{ padding: 2mm 4mm 0; font-size: 7.4pt; font-weight: bold;
@@ -307,6 +317,7 @@ p.teoria {{ margin: 0 0 2.6mm; text-align: justify; hyphens: auto; }}
 .q-passos li {{ margin-bottom: 1.2mm; font-size: 8.9pt; }}
 .q-passos li::marker {{ color: var(--azul); font-weight: bold;
                        font-family: "DejaVu Sans", sans-serif; }}
+.q-passos li .resposta {{ color: #065f46; font-weight: bold; }}
 
 /* ---------- fórmulas ---------- */
 .formulas {{ display: flex; flex-wrap: wrap; gap: 2.5mm; margin: 3.5mm 0; }}
