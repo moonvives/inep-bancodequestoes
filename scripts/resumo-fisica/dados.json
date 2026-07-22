@@ -1,0 +1,1093 @@
+{
+  "_fonte": "Conteúdo integral sintetizado das transcrições das videoaulas de Física (uso pessoal do assinante): teoria essencial, como cai no ENEM, questões-modelo resolvidas passo a passo, pegadinhas, atalho e fórmulas.",
+  "Movimento uniforme": {
+    "aula": "Cinemática",
+    "teoria": [
+      "Movimento uniforme (MU), também chamado de deslocamento uniforme, é aquele em que a VELOCIDADE é CONSTANTE — ela não muda ao longo do tempo. Justamente por isso a aceleração é NULA (aceleração, em m/s², mede quanto a velocidade varia a cada segundo; se a velocidade não varia, não há aceleração).",
+      "A consequência prática mais importante: distâncias iguais são percorridas em tempos iguais. Se você anda a velocidade constante e vai de 0 a 10 km, depois de 10 a 20 km, depois de 20 a 30 km, os intervalos de tempo entre esses trechos são exatamente iguais. É isso que permite a aproximação intuitiva do ensino médio: se dou 10 passos por minuto e preciso dar 100 passos, vou gastar 10 minutos — a velocidade constante deixa relacionar espaço e tempo diretamente, sem se preocupar com aceleração.",
+      "A relação fundamental é a velocidade média: v = ΔS/Δt (espaço percorrido dividido pelo tempo gasto). No SI, espaço em metros, tempo em segundos, velocidade em m/s. Se gastei 10 s para andar 20 m, minha velocidade é 20/10 = 2 m/s. Da mesma fórmula sai o deslocamento: ΔS = v·t — andar 1 hora a 100 km/h dá 100 km; andar 10 s a 20 m/s dá 200 m. É o 'jogo das três grandezas': o enunciado dá duas e pede a terceira (pode pedir tempo, distância ou velocidade).",
+      "Há uma variação mais difícil: DOIS móveis (ou dois sinais) com velocidades diferentes, ambas constantes. O truque é pensar na TAXA DE AFASTAMENTO: a cada segundo, os dois se distanciam por um valor igual à DIFERENÇA das velocidades. Se eu ando 100 m/min e um amigo anda 200 m/min, a cada minuto ele se afasta 100 m de mim; após 4 minutos ele está 400 m à frente. Invertendo o raciocínio, se sei a diferença de posição e a taxa de afastamento, descubro o tempo — e daí qualquer outra grandeza."
+    ],
+    "como_cai": "Duas formas: (1) aplicação direta de v = ΔS/Δt, em que o enunciado dá duas grandezas e pede a terceira; (2) dois móveis/sinais com velocidades constantes diferentes, em que a diferença de velocidade e a diferença de tempo (ou de posição acumulada) revelam a distância procurada.",
+    "questoes_resolvidas": [
+      {
+        "enunciado": "No momento de máxima aproximação, a sonda New Horizons estava a ~5 bilhões de km de Plutão/Terra. Sabendo que a velocidade da luz é 3×10⁸ m/s, qual o tempo decorrido entre o envio de uma imagem pela sonda e sua recepção na Terra?",
+        "resolucao": [
+          "A informação viaja na velocidade da luz (movimento uniforme), então v = ΔS/Δt → Δt = ΔS/v.",
+          "Converter a distância: 5 bilhões de km = 5×10⁹ km; para metros, ×10³ → 5×10¹² m.",
+          "Δt = 5×10¹² / 3×10⁸ ≈ 1,7×10⁴ s.",
+          "Resposta: aproximadamente 1,7×10⁴ s (letra D). Poderia dar velocidade e tempo e pedir distância — é o mesmo jogo de três grandezas."
+        ]
+      },
+      {
+        "enunciado": "O som da queda de gelo é detectado por dois sensores no barco: A imerso na água (v = 1540 m/s) e B no ar (v = 340 m/s). Comparando o mesmo ponto do sinal, ele chega 12 s antes na água. Qual a distância L entre o barco e a geleira?",
+        "resolucao": [
+          "Os dois sons partem juntos da geleira; o da água é mais rápido, então 'ganha' distância a cada segundo.",
+          "Taxa de afastamento = diferença das velocidades = 1540 − 340 = 1200 m por segundo.",
+          "O som na água chegou 12 s ANTES; nesse intervalo o som no ar ainda percorreria 340 × 12 = 4080 m — essa é a vantagem acumulada em distância quando o som da água chegou.",
+          "Tempo de percurso do som na água = vantagem acumulada / taxa de afastamento = 4080 / 1200 = 3,4 s.",
+          "L = velocidade na água × tempo = 1540 × 3,4 ≈ 5236 m (mais próximo de ~5240 m). O foco é o RACIOCÍNIO da taxa de afastamento, não a conta."
+        ]
+      }
+    ],
+    "pegadinha": "No caso de dois móveis, a taxa de afastamento é a DIFERENÇA das velocidades (não a soma, quando vão no mesmo sentido). E cuidado com a conversão de unidades (km→m, bilhões = 10⁹).",
+    "atalho": "v = ΔS/Δt (dá duas, acha a terceira). Dois móveis no mesmo sentido: afastam-se pela DIFERENÇA das velocidades a cada segundo.",
+    "formulas": [
+      {
+        "rotulo": "Velocidade média",
+        "latex": "v=\\dfrac{\\Delta S}{\\Delta t}"
+      },
+      {
+        "rotulo": "Deslocamento",
+        "latex": "\\Delta S=v\\cdot t"
+      }
+    ]
+  },
+  "Movimento acelerado e frenagem": {
+    "aula": "Cinemática",
+    "teoria": [
+      "Quando a velocidade NÃO é constante, entra a aceleração. No movimento uniformemente variado (MUV), a aceleração é constante. Aceleração de 2 m/s² significa que a cada segundo a velocidade varia 2 m/s: partindo do repouso, no 1º s a velocidade é 2 m/s, no 2º s é 4 m/s, no 3º s é 6 m/s, e assim por diante.",
+      "Três fórmulas resolvem praticamente tudo. (1) Equação horária (o 'sorvetão'): S = S₀ + v₀t + ½at² — a posição final é a inicial mais o termo da velocidade inicial mais metade da aceleração vezes o tempo ao quadrado. (2) v = v₀ + at — a velocidade final é a inicial mais a aceleração vezes o tempo (faz sentido: acelerando 2 m/s² por 3 s a partir do repouso, chega-se a 6 m/s). (3) Equação de Torricelli: v² = v₀² + 2·a·ΔS — use-a quando NÃO se tem o tempo.",
+      "O contexto mais recorrente é a FRENAGEM: o motorista pisa no freio para parar (velocidade final = 0) e a aceleração é NEGATIVA (desaceleração). Em problemas de frenagem sem o tempo, Torricelli é a fórmula certa.",
+      "Um subtipo clássico compara dois motoristas: um ATENTO e um DESATENTO (que demora mais para reagir, por exemplo por usar o celular). O procedimento-padrão, que evita quase todas as pegadinhas: primeiro calcule quanto o motorista atento anda até parar. Depois, para o desatento, some duas coisas: (a) o quanto ele ainda ANDA durante o tempo extra de reação — em que o carro continua acelerando — e (b) a frenagem a partir da velocidade JÁ AUMENTADA por essa aceleração no tempo de reação. A diferença entre os dois totais é a resposta."
+    ],
+    "como_cai": "Frenagem (parar o carro, v final = 0, a negativa) e, sobretudo, a comparação motorista atento × desatento, em que o desatento reage mais tarde e, ao frear, já está mais rápido.",
+    "questoes_resolvidas": [
+      {
+        "enunciado": "Dois motoristas aceleram inicialmente a 1 m/s² e freiam a 5 m/s². O atento aciona o freio a 14 m/s; o desatento leva 1 s a mais para começar a frear. Quanto o desatento percorre a MAIS até parar?",
+        "resolucao": [
+          "Motorista atento (frenagem, tem-se velocidades mas não o tempo → Torricelli): 0 = 14² − 2·5·S → 10S = 196 → S = 19,6 m.",
+          "Desatento — no 1 s extra de reação o carro AINDA acelera a 1 m/s²: ΔS = v₀t + ½at² = 14·1 + ½·1·1² = 14,5 m. E a velocidade sobe de 14 para 15 m/s.",
+          "Frenagem do desatento a partir de 15 m/s (Torricelli): 0 = 15² − 2·5·S → 10S = 225 → S = 22,5 m.",
+          "Total do desatento = 14,5 + 22,5 = 37 m. Diferença: 37 − 19,6 = 17,4 m (letra E)."
+        ]
+      }
+    ],
+    "pegadinha": "Ao começar a frear, a velocidade do desatento NÃO é a inicial do enunciado (14) — é ela somada à aceleração ganha no tempo de reação (vira 15). Esquecer isso é o erro que a questão arma.",
+    "atalho": "Sem o tempo → Torricelli. Comparativa: calcule o atento; para o desatento some o trecho do tempo de reação e use a velocidade JÁ aumentada na frenagem.",
+    "formulas": [
+      {
+        "rotulo": "Equação horária (sorvetão)",
+        "latex": "S=S_0+v_0t+\\tfrac{1}{2}at^2"
+      },
+      {
+        "rotulo": "Velocidade",
+        "latex": "v=v_0+at"
+      },
+      {
+        "rotulo": "Torricelli (sem o tempo)",
+        "latex": "v^2=v_0^2+2a\\,\\Delta S"
+      }
+    ]
+  },
+  "Gráfico posição × tempo": {
+    "aula": "Cinemática",
+    "teoria": [
+      "Num gráfico de POSIÇÃO (eixo y) por TEMPO (eixo x), a velocidade em cada instante é numericamente igual à INCLINAÇÃO (tangente) da curva naquele ponto. Isso decorre da própria definição: velocidade é espaço dividido por tempo, ou seja, o quanto o y (posição) varia em relação ao x (tempo).",
+      "Interpretando a inclinação: uma reta mais inclinada ('mais em pé') significa andar MUITO em POUCO tempo → maior velocidade. Uma reta menos inclinada ('mais deitada') significa andar pouco em muito tempo → menor velocidade. Para achar os pontos de maior e menor velocidade, traça-se a tangente à curva em cada ponto pedido e compara-se a inclinação."
+    ],
+    "como_cai": "Pedem os pontos de MAIOR e MENOR velocidade num gráfico posição×tempo (movimento com velocidade variável). Traça-se a tangente em cada ponto e compara-se quão 'em pé' ela está.",
+    "questoes_resolvidas": [
+      {
+        "enunciado": "Um piloto testa um carro numa reta longa; a posição em função do tempo está no gráfico. Os pontos em que a velocidade é menor e maior são, respectivamente?",
+        "resolucao": [
+          "A velocidade em cada ponto = inclinação da tangente à curva ali.",
+          "Trace a tangente em cada ponto (K, L, M, N...): a mais inclinada indica a MAIOR velocidade; a menos inclinada, a MENOR.",
+          "O ponto de tangente mais 'em pé' é o L (maior velocidade); o de tangente mais 'deitada' é o M (menor).",
+          "Menor e maior, respectivamente: M e L (letra C)."
+        ]
+      }
+    ],
+    "pegadinha": "Não confunda o VALOR da posição (altura do ponto no gráfico) com a velocidade: a velocidade é a INCLINAÇÃO da tangente, não a altura.",
+    "atalho": "Posição×tempo: velocidade = inclinação da tangente. Mais 'em pé' = mais rápido; mais 'deitada' = mais devagar.",
+    "formulas": [
+      {
+        "rotulo": "Velocidade no gráfico s×t",
+        "latex": "v=\\tan\\theta=\\dfrac{\\Delta S}{\\Delta t}"
+      }
+    ]
+  },
+  "Composição de movimentos e trajetória": {
+    "aula": "Cinemática",
+    "teoria": [
+      "Um movimento pode ser a COMPOSIÇÃO de dois movimentos em eixos diferentes (por exemplo, para a frente e para o lado). Andar na diagonal de uma sala, indo para a porta e para a janela ao mesmo tempo, é a soma de dois movimentos independentes; a trajetória resultante é a soma vetorial dos dois.",
+      "Ponto central: quase nunca essa composição é 'igual' nos dois eixos. Há infinitas diagonais possíveis, cada uma com uma proporção diferente entre o quanto se anda em cada eixo. Em geral, um eixo tem movimento uniforme e o outro, movimento variado — por isso a trajetória costuma ser uma CURVA, não uma diagonal reta simétrica.",
+      "No lançamento de uma bolinha, o eixo horizontal (X) tem velocidade CONSTANTE (movimento uniforme), enquanto o eixo vertical (Y) sofre a gravidade (queda livre, velocidade crescente). Espaços iguais em X por intervalo de tempo, mas espaços cada vez maiores em Y → o resultado é uma curva (parábola) que desce cada vez mais rápido."
+    ],
+    "como_cai": "Identificar a trajetória correta a partir de uma descrição: barco atravessando correnteza de velocidade variável; bolinha lançada da mesa; e reconhecer que composições de movimentos costumam ser desiguais (um eixo uniforme, outro variado).",
+    "questoes_resolvidas": [
+      {
+        "enunciado": "Um barco atravessa um rio mantendo o motor sempre perpendicular à correnteza, que é fraca junto à margem e máxima no meio. Qual trajetória representa o movimento do barco?",
+        "resolucao": [
+          "Em Y (perpendicular à correnteza) o barco tem velocidade constante pelo motor; em X a correnteza o arrasta, e ela VARIA (fraca na margem, forte no meio).",
+          "Perto da margem: anda muito para a frente e pouco para o lado (correnteza fraca). No meio: anda muito para o lado e pouco para a frente (correnteza forte).",
+          "A trajetória é uma curva com arrasto lateral CRESCENTE — não a diagonal reta simétrica.",
+          "Resposta: a curva com deslocamento lateral desigual (letra D)."
+        ]
+      },
+      {
+        "enunciado": "Uma bolinha é lançada horizontalmente da beira de uma mesa. Qual figura representa a trajetória de queda?",
+        "resolucao": [
+          "Em X a velocidade é constante (movimento uniforme): espaços iguais em intervalos iguais.",
+          "Em Y age a gravidade (queda livre): a velocidade cresce, então os espaços verticais aumentam a cada intervalo.",
+          "Cruzando os dois, forma-se uma curva (parábola) que desce cada vez mais rápido — não os 'passos no vazio' dos desenhos animados nem uma reta.",
+          "Resposta: a trajetória curva/parabólica (letra D)."
+        ]
+      }
+    ],
+    "pegadinha": "A trajetória da bolinha lançada é curva (parábola), não a queda vertical 'de desenho animado' nem uma diagonal reta. E a composição raramente é simétrica: um eixo é uniforme, o outro variado.",
+    "atalho": "Composição = X uniforme + Y variado (queda livre). Resultado quase sempre curvo, com um eixo 'ganhando' do outro."
+  },
+  "Queda livre": {
+    "aula": "Cinemática",
+    "teoria": [
+      "Queda livre é apenas um movimento uniformemente variado (MUV) cuja aceleração é a da GRAVIDADE (g). É o mesmo movimento acelerado já visto, só que a aceleração não vem de um motor ou pedal — vem da gravidade, que age sempre sobre um corpo solto no ar.",
+      "A consequência mais cobrada: sem resistência do ar, a queda NÃO depende da massa. Dois corpos de massas diferentes, soltos juntos da mesma altura, chegam ao chão ao MESMO tempo, porque a única aceleração vertical é g, igual para os dois. O que importa é a mesma aceleração (g), a mesma velocidade inicial e o mesmo tempo — a massa não entra."
+    ],
+    "como_cai": "Explicar por que dois corpos de massas diferentes caem simultaneamente (na ausência de ar). A resposta aponta para a aceleração comum (g), não para força, inércia ou quantidade de movimento.",
+    "questoes_resolvidas": [
+      {
+        "enunciado": "Duas motos (uma com massa 3 vezes a da outra) deixam a pista horizontalmente ao mesmo tempo; os pilotos as abandonam e elas caem praticamente sem resistência do ar. Por que atingem o solo simultaneamente?",
+        "resolucao": [
+          "Sem ar, a única aceleração vertical é g, igual para as duas, independentemente da massa.",
+          "Mesma altura, mesma velocidade inicial vertical (zero, pois saíram na horizontal) e mesma aceleração → mesmo tempo de queda.",
+          "Não é 'mesma força' (os pesos são diferentes: P = m·g), nem 'mesma inércia', nem 'mesma quantidade de movimento'.",
+          "Resposta: adquirem a mesma aceleração durante a queda."
+        ]
+      }
+    ],
+    "pegadinha": "Elas NÃO têm a mesma força-peso nem a mesma inércia (as massas diferem); têm a mesma ACELERAÇÃO (g). Alternativas com 'mesma força' ou 'mesma inércia' são as armadilhas.",
+    "atalho": "Sem ar, a queda independe da massa: mesma g → caem juntas.",
+    "formulas": [
+      {
+        "rotulo": "Aceleração da queda",
+        "latex": "a=g\\;\\;(\\text{independe da massa } m)"
+      }
+    ]
+  },
+  "Lançamentos": {
+    "aula": "Cinemática",
+    "teoria": [
+      "Lançamentos são composições de dois movimentos: em X, movimento uniforme (velocidade constante); em Y, queda livre / MUV com a gravidade. Há três tipos. LANÇAMENTO HORIZONTAL: a bolinha sai reta, sem velocidade vertical inicial → em X é movimento uniforme e em Y é queda livre (como soltar a bolinha). LANÇAMENTO VERTICAL: joga-se para cima → sobe em MUV desacelerando por g (a velocidade diminui até zerar no ponto mais alto) e depois desce em queda livre. LANÇAMENTO OBLÍQUO: junta tudo — sobe/desce em Y (MUV com g) e avança em X (uniforme).",
+      "O que importa é identificar o movimento em cada eixo e saber decompor as velocidades: às vezes só há velocidade em X (lançamento horizontal, v_y inicial = 0), às vezes só em Y (vertical), às vezes nas duas (oblíquo).",
+      "Um resultado-chave: o ALCANCE horizontal cresce quando a gravidade é MENOR. Com g menor, o corpo demora muito mais para desacelerar em Y na subida e para acelerar na descida; como em X a velocidade é constante, durante esse tempo maior ele percorre muito mais distância. Por isso um salto na Lua (g = 1/6 da terrestre) tem alcance muito maior."
+    ],
+    "como_cai": "Comparar alcance (Lua × Terra) e resolver lançamentos horizontais (jato de água, bolinha da mesa), usando que em Y a velocidade inicial é zero e o tempo de queda liga os dois eixos.",
+    "questoes_resolvidas": [
+      {
+        "enunciado": "A gravidade na Lua é 1/6 da terrestre. Em relação à Terra, um salto oblíquo na Lua teria alcance?",
+        "resolucao": [
+          "Em Y, com g seis vezes menor, o corpo leva muito mais tempo para subir (desacelerar até zerar) e depois cair.",
+          "Em X a velocidade é constante; durante esse tempo maior, percorre muito mais distância horizontal.",
+          "Resposta: alcance muito maior (letra D)."
+        ]
+      },
+      {
+        "enunciado": "Uma mangueira na horizontal, a 1 m do chão, lança água que atinge o solo a 3 m de distância (g = 10). Qual seria o alcance vertical se ela fosse apontada totalmente para cima?",
+        "resolucao": [
+          "Queda em Y (lançamento horizontal, v_y inicial = 0): 1 = ½·10·t² → t² = 1/5 → t = 1/√5 s.",
+          "Velocidade de saída da água = distância horizontal / tempo = 3 / (1/√5) = 3√5 m/s.",
+          "Apontando para cima, toda a velocidade vai para Y; no ponto mais alto v = 0. Torricelli: 0 = (3√5)² − 2·10·h → 45 = 20h → h = 2,25 m (letra B)."
+        ]
+      }
+    ],
+    "pegadinha": "No lançamento horizontal, a velocidade vertical INICIAL é zero (a bolinha só tem velocidade em X ao sair). E menor gravidade significa MAIOR alcance (mais tempo no ar), não menor.",
+    "atalho": "X sempre uniforme; Y é queda livre/MUV. Horizontal: v_y inicial = 0. Menor gravidade → maior alcance.",
+    "formulas": [
+      {
+        "rotulo": "Lançamento horizontal",
+        "latex": "h=\\tfrac{1}{2}g\\,t^2\\;;\\;v_x=\\dfrac{\\Delta x}{t}"
+      }
+    ]
+  },
+  "Peso, massa e normal": {
+    "aula": "Dinâmica",
+    "teoria": [
+      "MASSA é a quantidade de matéria de um corpo — INVARIÁVEL (80 kg na Terra, na Lua ou em Saturno).",
+      "PESO é a força da massa vezes a gravidade (P = m·g): muda com a gravidade (na Lua o peso é menor, embora a massa seja a mesma).",
+      "NORMAL é a força de contato entre superfícies (o que a balança de plataforma mede). Peso e normal NÃO formam par ação-reação."
+    ],
+    "como_cai": "Balança de braços iguais (mede massa por comparação — resultado igual em qualquer gravidade) × balança de plataforma (mede compressão/peso — muda com g). Elevador: subindo, a compressão aumenta.",
+    "questoes_resolvidas": [
+      {
+        "enunciado": "Uma balança A (braços iguais) e uma B (plataforma) marcam 5 kg na Terra. Levadas à Lua (g=1,6), quanto marcam M1 (balança A) e M2 (balança B)?",
+        "resolucao": [
+          "Balança A compara massas: o peso-padrão sofre a mesma gravidade que o corpo, então continua equilibrando em 5 kg → M1 = 5 kg.",
+          "Balança B mede a compressão (peso): com g menor, a compressão é menor → M2 < 5 kg.",
+          "Resposta: M1 = 5 kg e M2 menor que 5 kg."
+        ]
+      },
+      {
+        "enunciado": "Uma balança de força na Lua (g=1,6) marca peso de 4 N para uma massa m̂. Qual essa massa?",
+        "resolucao": [
+          "Peso = massa × gravidade → m = P/g.",
+          "m = 4 / 1,6 = 2,5 kg."
+        ]
+      }
+    ],
+    "pegadinha": "Balança de braços iguais dá o MESMO valor em qualquer lugar (mede massa); balança de plataforma muda com a gravidade (mede peso/compressão).",
+    "atalho": "Massa invariável; peso = m·g (muda com g); normal = força de contato.",
+    "formulas": [
+      {
+        "rotulo": "Peso",
+        "latex": "P=m\\cdot g"
+      }
+    ]
+  },
+  "Atrito": {
+    "aula": "Dinâmica",
+    "teoria": [
+      "Atrito é uma força RESISTIVA, contrária ao escorregamento entre superfícies sólidas. Seu módulo é Fat = μ·N (coeficiente de atrito vezes a força normal).",
+      "O coeficiente μ depende do par de superfícies; o atrito estático (para tirar do lugar) é MAIOR que o dinâmico (para manter em movimento)."
+    ],
+    "como_cai": "Curling (varrer reduz o atrito cinético); escolha de revestimento de rampa com μ suficiente e menor custo.",
+    "questoes_resolvidas": [
+      {
+        "enunciado": "No curling, varrer o gelo à frente da pedra faz a desaceleração ser MENOR. Isso ocorre porque a ação dos varredores diminui o quê?",
+        "resolucao": [
+          "Varrer alisa/derrete micro-irregularidades do gelo, reduzindo o atrito.",
+          "A pedra está em movimento → atrito cinético.",
+          "Resposta: diminui o módulo da força de atrito cinético."
+        ]
+      },
+      {
+        "enunciado": "Rampa de cadeira de rodas: não pode deslizar com força até 200 N; normal = 800 N. Qual revestimento (μ) de menor custo serve?",
+        "resolucao": [
+          "No limite: Fat = μ·N → 200 = μ·800 → μ = 0,25.",
+          "Para NÃO deslizar em 200 N, é preciso μ > 0,25.",
+          "Entre os que têm μ > 0,25, escolher o mais barato (a madeira, no quadro)."
+        ]
+      }
+    ],
+    "atalho": "Fat = μ·N. Estático > dinâmico. Precisa μ maior que o do limiar F/N.",
+    "formulas": [
+      {
+        "rotulo": "Força de atrito",
+        "latex": "F_{at}=\\mu\\cdot N"
+      }
+    ]
+  },
+  "Tensão e polias": {
+    "aula": "Dinâmica",
+    "teoria": [
+      "Tensão é a força transmitida por uma corda/cabo — não há transmissão 'mágica' de força sem contato; a corda sofre a força e a repassa. Numa corda ideal a tensão é uniforme.",
+      "Cada POLIA MÓVEL multiplica por 2 a força aplicada (ou reduz o esforço à metade): F vira 2F, depois 4F, 8F... É o princípio da associação de polias de Arquimedes."
+    ],
+    "como_cai": "Número de polias móveis para mover uma carga (Arquimedes e o navio).",
+    "questoes_resolvidas": [
+      {
+        "enunciado": "Arquimedes moveu sozinho um navio de 3000 kg (μ=0,8; g=10) puxando com F=400 N por uma associação de polias. Número mínimo de polias móveis?",
+        "resolucao": [
+          "Força de atrito a vencer: Fat = μ·N = 0,8 × 30000 = 24000 N (N = m·g = 30000 N).",
+          "Cada polia móvel dobra a força: 400 → 800 → 1600 → 3200 → 6400 → 12800 → 25600.",
+          "Com 6 polias móveis a força (25600 N) supera os 24000 N necessários. Resposta: 6 (letra B)."
+        ]
+      }
+    ],
+    "atalho": "Cada polia móvel dobra a força. Conte quantas dobras passam da força de atrito.",
+    "formulas": [
+      {
+        "rotulo": "Polias móveis",
+        "latex": "F_{efetiva}=2^{n}\\cdot F"
+      }
+    ]
+  },
+  "Aceleração centrípeta": {
+    "aula": "Dinâmica",
+    "teoria": [
+      "Todo movimento circular tem uma aceleração centrípeta, dirigida ao CENTRO da trajetória, dada por ac = v²/R. É ela que mantém o corpo na curva.",
+      "A aceleração TANGENCIAL só existe se a velocidade (módulo) muda ao longo da curva. Se a velocidade é constante, a aceleração tangencial é nula e só há a centrípeta."
+    ],
+    "como_cai": "Bem teórica: identificar que, com velocidade constante, a aceleração tangencial é nula e só há centrípeta (satélite/coelhinho em órbita).",
+    "questoes_resolvidas": [
+      {
+        "enunciado": "Um objeto descreve trajetória circular com módulo de velocidade constante. O vetor aceleração tangencial é?",
+        "resolucao": [
+          "Velocidade (módulo) constante → não há variação tangencial de velocidade.",
+          "Logo a aceleração tangencial é NULA; existe apenas a centrípeta (perpendicular à velocidade, para o centro).",
+          "Resposta: aceleração tangencial nula."
+        ]
+      }
+    ],
+    "atalho": "Circular: ac = v²/R (para o centro). Velocidade constante → tangencial nula.",
+    "formulas": [
+      {
+        "rotulo": "Aceleração centrípeta",
+        "latex": "a_c=\\dfrac{v^2}{R}"
+      }
+    ]
+  },
+  "Impulso e quantidade de movimento": {
+    "aula": "Dinâmica",
+    "teoria": [
+      "Impulso é uma força aplicada durante um tempo (I = F·Δt) e é igual à variação da quantidade de movimento: F·Δt = m·Δv.",
+      "Para uma MESMA variação de velocidade (mesma massa), pode-se usar uma força grande por pouco tempo (soco) ou uma força pequena por muito tempo (empurrão gentil). Diluir a força no tempo reduz a força — princípio dos amortecedores e do cinto/airbag."
+    ],
+    "como_cai": "Cinto de segurança e barreiras de proteção: para reduzir a força (dano), prolongar o tempo da colisão.",
+    "questoes_resolvidas": [
+      {
+        "enunciado": "Testes de 5 cintos numa colisão de 0,3 s, com mesma massa e mesma variação de velocidade. Qual cinto oferece menor risco de lesão?",
+        "resolucao": [
+          "F·Δt = m·Δv. Como m e Δv são iguais, a força é menor quando o tempo é maior.",
+          "No gráfico aceleração×tempo, escolher a curva que distribui a desaceleração no MAIOR tempo (menor pico de força).",
+          "Resposta: o cinto cujo gráfico ocupa mais tempo (letra B)."
+        ]
+      },
+      {
+        "enunciado": "Barreira de pneus (o carro volta) × barreira de blocos deformáveis (o carro para). Como ficam a força média e a energia dissipada?",
+        "resolucao": [
+          "Pneus: o carro chega e VOLTA → maior variação de velocidade (chega +5, volta −2 → Δv=7) → com o mesmo tempo, força MAIOR.",
+          "Blocos: o carro para (Δv menor), mas vai da velocidade a zero → dissipa MAIS energia.",
+          "Resposta: força maior nos pneus; energia dissipada maior nos blocos (letra A)."
+        ]
+      }
+    ],
+    "pegadinha": "Voltar após a batida exige MAIS força (maior Δv); parar dissipa mais energia.",
+    "atalho": "F·Δt = m·Δv. Mesmo Δv: mais tempo → menos força (por isso airbag/cinto amortecem).",
+    "formulas": [
+      {
+        "rotulo": "Teorema do impulso",
+        "latex": "F\\cdot\\Delta t=m\\cdot\\Delta v"
+      }
+    ]
+  },
+  "Tipos de energia mecânica": {
+    "aula": "Energia Mecânica",
+    "teoria": [
+      "Há três energias mecânicas: potencial GRAVITACIONAL (ligada à altura, Epg = m·g·h), potencial ELÁSTICA (ligada à deformação de molas, Epe = kx²/2) e CINÉTICA (ligada à velocidade, Ec = mv²/2).",
+      "As potenciais são 'armazenadas' (só viram energia de fato quando liberadas); a cinética exige movimento. Um sistema mola→carrinho→loop mostra as três se convertendo entre si."
+    ],
+    "como_cai": "Caracterizar/identificar o tipo de energia por comparação (um sistema descrito é análogo a qual energia conhecida?).",
+    "questoes_resolvidas": [
+      {
+        "enunciado": "Um cristal é comprimido por pressão extrema e passa a armazenar enorme quantidade de energia numa estrutura supercompacta. Esse processo é análogo à energia?",
+        "resolucao": [
+          "Comprimir algo e nele armazenar energia liberável é exatamente o que ocorre numa MOLA comprimida.",
+          "Reservatório de usina e carrinho no alto = potencial gravitacional; fósforo/reator = térmica/nuclear.",
+          "Resposta: energia potencial elástica acumulada na mola (letra E)."
+        ]
+      }
+    ],
+    "atalho": "Altura = gravitacional (mgh); mola/compressão = elástica (kx²/2); velocidade = cinética (mv²/2).",
+    "formulas": [
+      {
+        "rotulo": "Potencial gravitacional",
+        "latex": "E_{pg}=m\\,g\\,h"
+      },
+      {
+        "rotulo": "Potencial elástica",
+        "latex": "E_{pe}=\\dfrac{k x^2}{2}"
+      },
+      {
+        "rotulo": "Cinética",
+        "latex": "E_c=\\dfrac{m v^2}{2}"
+      }
+    ]
+  },
+  "Conservação e transformação de energia": {
+    "aula": "Energia Mecânica",
+    "teoria": [
+      "Em sistemas ideais (sem atrito), a energia mecânica se CONSERVA: a que sai de uma forma reaparece em outra (elástica→cinética→gravitacional).",
+      "Cuidado com os fatores quadráticos: na cinética a velocidade está ao quadrado, e na elástica a deformação x está ao quadrado. Dobrar x quadruplica a energia elástica; dobrar v quadruplica a cinética."
+    ],
+    "como_cai": "Multiplicar a velocidade de lançamento (elástica→cinética) por um fator, decidindo o que mudar na mola/deformação/massa.",
+    "questoes_resolvidas": [
+      {
+        "enunciado": "Uma mola lança um cubo. Para a velocidade de lançamento AUMENTAR 4 vezes, o que fazer? (atrito desprezível)",
+        "resolucao": [
+          "Conservação: kx²/2 = mv²/2 → v = x·√(k/m).",
+          "Para v×4: aumentar a deformação x em 4×, OU a constante k em 16×, OU dividir a massa por 16.",
+          "A alternativa que bate: manter a mola e aumentar a deformação 4 vezes (letra B)."
+        ]
+      },
+      {
+        "enunciado": "Disco de Maxwell: energia cinética de rotação no ponto mais baixo, com massa 30 g, altura útil 2h/3 (h=410 mm), g=10.",
+        "resolucao": [
+          "Sistema conservativo: Ec = Epg = m·g·(2h/3).",
+          "= 30×10⁻³ · 10 · (2·0,410/3) ≈ 8,2×10⁻² J (letra B)."
+        ]
+      }
+    ],
+    "pegadinha": "Dobrar a deformação NÃO dobra a energia elástica — QUADRUPLICA (x é ao quadrado). Idem velocidade na cinética.",
+    "atalho": "Energia se conserva. v e x entram ao quadrado — cuidado com os fatores."
+  },
+  "Trabalho e potência": {
+    "aula": "Energia Mecânica",
+    "teoria": [
+      "Trabalho é a variação de energia de um sistema: τ = ΔE, e também τ = F·d·cosθ. Para mudar a energia de um corpo (levantá-lo, acelerá-lo) é preciso realizar trabalho.",
+      "Potência é trabalho por tempo: P = τ/Δt, medida em watt (W = J/s). Um sistema é mais 'potente' quando realiza o mesmo trabalho em menos tempo."
+    ],
+    "como_cai": "Calcular trabalho como variação de energia cinética; usar 'watt = joule por segundo' para achar tempo a partir da potência.",
+    "questoes_resolvidas": [
+      {
+        "enunciado": "Corredor de 90 kg vai do repouso a 12 m/s nas 13 primeiras passadas (plano). Trabalho total realizado?",
+        "resolucao": [
+          "τ = ΔEc = ½m·v_f² − ½m·v_i² (v_i = 0).",
+          "= ½·90·12² = 45·144 = 6480 J ≈ 6,5×10³ J."
+        ]
+      },
+      {
+        "enunciado": "Carro solar de 200 kg, painel de 9 m², insolação 1000 W/m², rendimento 30%. Tempo para ir do repouso a 108 km/h (30 m/s)?",
+        "resolucao": [
+          "Potência captada = 1000×9×0,30 = 2700 W = 2700 J/s.",
+          "Energia necessária = ½·200·30² = 90000 J.",
+          "Tempo = 90000/2700 ≈ 33 s (watt = joule/segundo)."
+        ]
+      }
+    ],
+    "atalho": "τ = ΔE = F·d·cosθ. Potência P = τ/t; W = J/s (energia por segundo).",
+    "formulas": [
+      {
+        "rotulo": "Trabalho",
+        "latex": "\\tau=\\Delta E=F\\,d\\cos\\theta"
+      },
+      {
+        "rotulo": "Potência",
+        "latex": "P=\\dfrac{\\tau}{\\Delta t}\\;[\\mathrm{W}=\\mathrm{J/s}]"
+      }
+    ]
+  },
+  "Colisões e quantidade de movimento": {
+    "aula": "Energia Mecânica",
+    "teoria": [
+      "Nas colisões conserva-se a quantidade de movimento (p = m·v). Numa colisão perfeitamente elástica (pêndulo de Newton), conserva-se também a energia: o número de esferas que batem de um lado é o que sai do outro.",
+      "Numa colisão em que os corpos se unem (inelástica), m·v antes = (m total)·v depois: se a massa total dobra com a mesma 'força', a velocidade cai pela metade."
+    ],
+    "como_cai": "Pêndulo de Newton (n esferas batem, n saem) e carrinhos que se aglutinam (conservação de m·v).",
+    "questoes_resolvidas": [
+      {
+        "enunciado": "No pêndulo de Newton, 3 esferas são soltas e colidem elasticamente com as 2 paradas. O que acontece após a colisão?",
+        "resolucao": [
+          "Conservação de energia e quantidade de movimento numa colisão elástica.",
+          "O número de esferas que sai é igual ao que bateu: 3 batem, 3 saem.",
+          "Resposta: 3 esferas saem do outro lado (letra C)."
+        ]
+      },
+      {
+        "enunciado": "Carrinho 1 (150 g) colide com o carrinho 2 (parado) e passam a andar juntos. Pelos dados, a velocidade cai a 1/3. Qual a massa do carrinho 2?",
+        "resolucao": [
+          "Conservação: m₁v₁ = (m₁+m₂)·v_f. A velocidade caiu a 1/3 → a massa total triplicou.",
+          "Massa total = 3×150 = 450 g.",
+          "Carrinho 2 = 450 − 150 = 300 g (letra C)."
+        ]
+      }
+    ],
+    "atalho": "Elástica (pêndulo): saem tantas quantas batem. União: m·v conserva — dobra a massa, cai a velocidade à metade.",
+    "formulas": [
+      {
+        "rotulo": "Quantidade de movimento",
+        "latex": "m_1 v_1=(m_1+m_2)\\,v_f"
+      }
+    ]
+  },
+  "Pressão": {
+    "aula": "Pressão, hidrostática e gravitação",
+    "teoria": [
+      "Pressão é força por área: P = F/A (Pascal = N/m²). Para a mesma força, quanto MENOR a área, maior a pressão (ponta do lápis dói, a base não).",
+      "Diferenças de pressão explicam efeitos do cotidiano: ao abrir e fechar a geladeira, sai ar quente, a pressão interna cai e a maior pressão externa dificulta reabrir."
+    ],
+    "como_cai": "Conceito P = F/A (efeitos como geladeira); e escala geométrica (torre × protótipo) em que peso∝volume∝k³ e área∝k².",
+    "questoes_resolvidas": [
+      {
+        "enunciado": "Uma réplica da Torre Eiffel em escala 1:100 usa os mesmos materiais. Qual a razão entre a pressão da torre real e a do modelo na fundação?",
+        "resolucao": [
+          "P = F/A; a força é o peso, proporcional ao VOLUME (∝ escala³ = 10⁶); a área da base ∝ escala² = 10⁴.",
+          "P_real/P_modelo = (10⁶)/(10⁴) = 10² = 100 (letra C)."
+        ]
+      },
+      {
+        "enunciado": "Após abrir e fechar a geladeira, ela custa a reabrir. Por quê?",
+        "resolucao": [
+          "Ao abrir, sai ar; ao fechar, a pressão interna fica menor que a externa.",
+          "A maior pressão externa 'segura' a porta.",
+          "Resposta: a pressão no interior está abaixo da externa."
+        ]
+      }
+    ],
+    "atalho": "P = F/A (N/m² = Pa). Menor área → maior pressão. Escala linear k → área k², volume/peso k³.",
+    "formulas": [
+      {
+        "rotulo": "Pressão",
+        "latex": "P=\\dfrac{F}{A}"
+      }
+    ]
+  },
+  "Hidrostática": {
+    "aula": "Pressão, hidrostática e gravitação",
+    "teoria": [
+      "Macete-chave: a cada 10 m de profundidade na água, soma-se ~1 atmosfera de pressão (além da 1 atm do ar).",
+      "O movimento de fluidos (e a sucção do aspirador, o canudo) vem de DIFERENÇAS de pressão: o líquido/ar vai da região de maior para a de menor pressão. Se as pressões se igualam, não há escoamento."
+    ],
+    "como_cai": "Descompressão de mergulhador (converter profundidade em atm); por que não se bebe o suco com um canudo dentro e outro fora.",
+    "questoes_resolvidas": [
+      {
+        "enunciado": "Mergulhador a 50 m precisa se descomprimir; o gráfico dá tempo × variação de pressão. Qual o tempo de descompressão?",
+        "resolucao": [
+          "50 m ≈ 5 atm da água + 1 atm do ar = 6 atm sobre ele.",
+          "Ao voltar à superfície ele sai de 6 atm para 1 atm → variação de 5 atm (≈500 kPa).",
+          "No gráfico, 500 kPa corresponde a 60 min (letra C)."
+        ]
+      },
+      {
+        "enunciado": "Bebendo suco com um canudo dentro do líquido e outro fora, ao sugar os dois é difícil beber. Por quê?",
+        "resolucao": [
+          "O canudo de fora liga a boca ao ar; a pressão na boca se iguala à atmosférica que atua sobre o suco.",
+          "Sem diferença de pressão, o líquido não sobe.",
+          "Resposta: a pressão na boca fica praticamente igual à que atua sobre o suco."
+        ]
+      }
+    ],
+    "pegadinha": "O suco só sobe quando se cria BAIXA pressão no canudo (tirando o ar); com pressões iguais, nada sobe.",
+    "atalho": "Cada 10 m de água = +1 atm. Fluido escoa da maior para a menor pressão."
+  },
+  "Rotação e translação": {
+    "aula": "Pressão, hidrostática e gravitação",
+    "teoria": [
+      "A ROTAÇÃO da Terra (em torno do próprio eixo, ~24 h) causa o dia e a noite.",
+      "A TRANSLAÇÃO (em torno do Sol), combinada à inclinação do eixo, causa as ESTAÇÕES do ano e as variações na duração do dia e na posição do nascer/pôr do sol."
+    ],
+    "como_cai": "Explicar mudança na posição do sol/estações (translação + inclinação); interpretar produção de placa solar maior no verão.",
+    "questoes_resolvidas": [
+      {
+        "enunciado": "A posição em que o sol se põe muda com a estação. Esse fenômeno se deve à combinação de dois fatores: inclinação do eixo terrestre e ...?",
+        "resolucao": [
+          "As estações e a mudança aparente do sol vêm da órbita da Terra ao redor do Sol.",
+          "O segundo fator é a translação da Terra ao redor do Sol.",
+          "Resposta: inclinação do eixo + translação."
+        ]
+      }
+    ],
+    "atalho": "Rotação → dia/noite. Translação + inclinação do eixo → estações e duração do dia."
+  },
+  "Gravitação": {
+    "aula": "Pressão, hidrostática e gravitação",
+    "teoria": [
+      "A força gravitacional entre dois corpos depende das massas, da constante G e da distância ao QUADRADO: F = G·M·m/d². Substituir um corpo por outro de MESMA massa não altera a força — mantém as órbitas.",
+      "Quando a distância muda, a força muda: um corpo que se aproxima da Terra sofre força crescente e, pela composição desse vetor com sua velocidade, tem a trajetória desviada (curva)."
+    ],
+    "como_cai": "Buraco negro de mesma massa do Sol (órbitas inalteradas); desvio de trajetória de asteroide que se aproxima.",
+    "questoes_resolvidas": [
+      {
+        "enunciado": "Se o Sol fosse substituído por um buraco negro de MESMA massa, o que aconteceria com as órbitas dos planetas?",
+        "resolucao": [
+          "F = G·M·m/d² depende da massa, não do tamanho/tipo do corpo.",
+          "Mesma massa e mesmas distâncias → mesma força gravitacional.",
+          "Resposta: as órbitas permaneceriam inalteradas."
+        ]
+      },
+      {
+        "enunciado": "Um asteroide que passa perto da Terra tem a trajetória desviada. Isso ocorre por quê?",
+        "resolucao": [
+          "Massas e G não mudam; o que muda é a distância → a força gravitacional da Terra sobre ele cresce ao se aproximar.",
+          "Essa força, quase perpendicular à velocidade, compõe-se com ela e curva a trajetória.",
+          "Resposta: sofre força gravitacional crescente (interação gravitacional mais forte) que desvia sua trajetória."
+        ]
+      }
+    ],
+    "atalho": "F = G·M·m/d². Mesma massa → mesma força (órbita igual). Muda a distância → muda a força → desvia a trajetória.",
+    "formulas": [
+      {
+        "rotulo": "Gravitação universal",
+        "latex": "F=G\\dfrac{M\\,m}{d^{2}}"
+      }
+    ]
+  },
+  "Resistores e leis de Ohm": {
+    "aula": "Eletrização e Eletrodinâmica I",
+    "teoria": [
+      "Resistores resistem à passagem da corrente e dissipam energia como calor (efeito Joule — é o que aquece a água no chuveiro).",
+      "1ª lei de Ohm: U = R·I (tensão = resistência × corrente). U é a tensão (V, volts), R a resistência (Ω, ohms) e I a corrente (A, ampères). É a fórmula mais usada de toda a eletrodinâmica.",
+      "2ª lei de Ohm: R = ρ·L/A — a resistência depende da resistividade ρ (do material), do comprimento L (maior L, maior R) e da área de seção transversal A (maior A, menor R). Cuidado: L e A têm de estar na MESMA unidade."
+    ],
+    "como_cai": "Comparar resistências de fios por R = ρL/A; ler gráfico tensão×corrente de um resistor ôhmico; e casos em que o fio consome parte da tensão (2 etapas: achar R do fio e depois U = R·I).",
+    "questoes_resolvidas": [
+      {
+        "enunciado": "Fios do mesmo material têm áreas e comprimentos dados (mesmas unidades). Colocar as resistências em ordem crescente.",
+        "resolucao": [
+          "R = ρL/A; com ρ constante, maior R = maior L com menor A.",
+          "Calcular L/A de cada fio e ordenar.",
+          "A ordem crescente sai direto dos quocientes L/A (letra C na questão)."
+        ]
+      },
+      {
+        "enunciado": "Torneira elétrica: corrente 30 A, fio de cobre A=4 mm², L=28 m, ρ=1,7×10⁻⁸, tomada 220 V. Qual a tensão que sobra para a torneira?",
+        "resolucao": [
+          "Converter área: 4 mm² = 4×10⁻⁶ m².",
+          "R do fio = ρL/A = 1,7×10⁻⁸ · 28 / (4×10⁻⁶) ≈ 0,119 Ω.",
+          "Queda no fio: U = R·I = 0,119 · 30 ≈ 3,57 V.",
+          "Sobra para a torneira: 220 − 3,57 ≈ 216 V."
+        ]
+      }
+    ],
+    "pegadinha": "L e A precisam estar na mesma unidade (converta mm²→m²). E o fio SEMPRE consome um pouco da tensão — subtraia essa queda.",
+    "atalho": "U = R·I (a fórmula-mãe). R = ρL/A (resistência é ρL/A: maior L / menor A → maior R).",
+    "formulas": [
+      {
+        "rotulo": "1ª lei de Ohm",
+        "latex": "U=R\\cdot I"
+      },
+      {
+        "rotulo": "2ª lei de Ohm",
+        "latex": "R=\\rho\\dfrac{L}{A}"
+      }
+    ]
+  },
+  "Aparelhos de medida": {
+    "aula": "Eletrização e Eletrodinâmica I",
+    "teoria": [
+      "O VOLTÍMETRO mede tensão e é ligado em PARALELO (funciona como resistência infinita — nada passa por ele, ele 'sente' a diferença de tensão entre dois pontos).",
+      "O AMPERÍMETRO mede corrente e é ligado em SÉRIE (funciona como resistência nula — a corrente passa por dentro dele). Se ligado em paralelo, desviaria toda a corrente.",
+      "Um multímetro é o mesmo aparelho podendo atuar como um ou outro, conforme a ligação."
+    ],
+    "como_cai": "Identificar como ligar o aparelho (série/paralelo) e o que ele mede; ler o valor a partir de U = R·I ou de carga/tempo.",
+    "questoes_resolvidas": [
+      {
+        "enunciado": "Para medir a corrente de fuga de uma bateria, como o amperímetro deve ser ligado e qual a leitura, sabendo que gastou 60 Ah em 120 h?",
+        "resolucao": [
+          "Amperímetro mede corrente → ligado em SÉRIE (corrente passa por dentro, não bifurca).",
+          "Corrente = carga/tempo = 60 Ah / 120 h = 0,5 A.",
+          "Esquema em série com leitura de 0,5 A."
+        ]
+      },
+      {
+        "enunciado": "No circuito, o multímetro 1 está em paralelo com a lâmpada e o 2 em série. O que cada um mede e quais os valores?",
+        "resolucao": [
+          "Em paralelo → voltímetro: mede a tensão (5,62 V na lâmpada).",
+          "Em série → amperímetro: mede a corrente.",
+          "Corrente pela lâmpada (R=40 Ω, U=5,62 V): I = U/R = 5,62/40 ≈ 0,14 A."
+        ]
+      }
+    ],
+    "pegadinha": "Use a tensão REAL que chega (5,62 V), não os 6 V nominais — a resistência interna das pilhas e do fio consome um pouco.",
+    "atalho": "Voltímetro = paralelo (tensão). Amperímetro = série (corrente)."
+  },
+  "Geradores e receptores": {
+    "aula": "Eletrização e Eletrodinâmica I",
+    "teoria": [
+      "Gerador (pilha/bateria) fornece tensão. Associação em SÉRIE (positivo no negativo do seguinte): as tensões SOMAM. Associação em PARALELO (mesmos polos juntos): a tensão é a MESMA, mas a duração DOBRA (dividem o trabalho).",
+      "Receptor é o oposto do gerador: recebe/consome a tensão. Se você inverte um gerador numa série (polos iguais frente a frente), ele vira receptor e a tensão resultante pode se anular."
+    ],
+    "como_cai": "Identificar a associação (série soma tensão; paralelo aumenta duração/carga) a partir dos polos.",
+    "questoes_resolvidas": [
+      {
+        "enunciado": "Um acidente com baterias de 12 V (pele molhada, R=1000 Ω) exigiu corrente ≥ 20 mA (parada respiratória). Qual associação de baterias causou isso?",
+        "resolucao": [
+          "Uma bateria: I = U/R = 12/1000 = 0,012 A (12 mA) — não basta.",
+          "Duas em SÉRIE dobram a tensão (24 V) → I = 24/1000 = 0,024 A (24 mA) → parada respiratória.",
+          "A associação é a que liga positivo com negativo (série). Paralelo não somaria a tensão."
+        ]
+      },
+      {
+        "enunciado": "Bateria de 10,8 V ou 14,4 V, feita de 12 células de 3,6 V. Qual tem maior capacidade de carga?",
+        "resolucao": [
+          "10,8 V = 3 células em série; 14,4 V = 4 células em série.",
+          "Com 12 células: 10,8 V permite 4 ramos em paralelo (12/3); 14,4 V permite 3 ramos (12/4).",
+          "Mais ramos em paralelo = maior capacidade de carga → a de 10,8 V, com 4 conjuntos em paralelo de 3 células em série (letra A)."
+        ]
+      }
+    ],
+    "atalho": "Série = soma tensão. Paralelo = mesma tensão, dobra a duração/carga. Polos iguais frente a frente → vira receptor."
+  },
+  "Circuitos: série e paralelo": {
+    "aula": "Eletrização e Eletrodinâmica I",
+    "teoria": [
+      "Em SÉRIE, a mesma corrente passa por todos os resistores e a resistência equivalente é a SOMA (Req = R1+R2+...).",
+      "Em PARALELO, todos ficam sob a MESMA tensão e a equivalente sai de 1/Req = 1/R1 + 1/R2 + ... (n resistores iguais R → Req = R/n). Associar em paralelo REDUZ a resistência equivalente.",
+      "Regra de ouro: resistores em série → mesma corrente; em paralelo → mesma tensão."
+    ],
+    "como_cai": "Comparar correntes em pontos de um circuito (a total se divide igualmente entre ramos idênticos) e explicar superaquecimento por queda da resistência equivalente.",
+    "questoes_resolvidas": [
+      {
+        "enunciado": "Três lâmpadas idênticas em paralelo; bateria e fios ideais. Quais correntes (A,B,C,D,E) são iguais?",
+        "resolucao": [
+          "Ramos idênticos sob mesma tensão → mesma corrente x em cada um; a total é 3x.",
+          "No ponto de entrada (A) e no de saída (E) passa a total 3x; após o 1º ramo sobra 2x; nos ramos individuais (C e D) passa x.",
+          "Iguais: A = E (3x) e C = D (x) (letra A)."
+        ]
+      },
+      {
+        "enunciado": "Adaptador T ligando três aparelhos de resistência R em paralelo. Por que superaquece?",
+        "resolucao": [
+          "Três R em paralelo: Req = R/3 (resistência equivalente MUITO menor).",
+          "Mesma tensão (mesmos terminais C-D) com resistência menor → por U = R·I, a corrente SOBE muito.",
+          "Superaquecimento por aumento da corrente entre C e D."
+        ]
+      }
+    ],
+    "pegadinha": "Ligar aparelhos em paralelo (adaptador T) reduz a resistência equivalente e AUMENTA a corrente — risco de superaquecer.",
+    "atalho": "Série: soma R, mesma corrente. Paralelo: 1/Req = Σ1/R, mesma tensão (R/n se iguais).",
+    "formulas": [
+      {
+        "rotulo": "Série",
+        "latex": "R_{eq}=R_1+R_2+\\cdots"
+      },
+      {
+        "rotulo": "Paralelo",
+        "latex": "\\dfrac{1}{R_{eq}}=\\dfrac{1}{R_1}+\\dfrac{1}{R_2}+\\cdots"
+      }
+    ]
+  },
+  "Energia elétrica e consumo (kWh)": {
+    "aula": "Eletrodinâmica II e Energia",
+    "teoria": [
+      "Energia é potência × tempo: E = P·t. No SI dá joule (W·s), mas as contas de luz usam kWh: potência em kW × tempo em HORAS. (1 kWh = 1000·3600 J.)",
+      "A potência tem três formas equivalentes: P = U·I (a principal), e — substituindo U = R·I — também P = U²/R e P = R·I². Maior potência ou maior tempo → maior consumo."
+    ],
+    "como_cai": "Consumo mensal de um aparelho em kWh; economia ao trocar incandescente por LED; tempo para recarregar um carro elétrico.",
+    "questoes_resolvidas": [
+      {
+        "enunciado": "Aparelho de 750 W usado 30 min/dia por 30 dias. Consumo mensal em kWh?",
+        "resolucao": [
+          "Tempo = 30 min × 30 = 900 min = 15 h.",
+          "E = P·t = 750 W × 15 h = 11250 Wh.",
+          "÷1000 → 11,25 kWh (≈11,3, letra D)."
+        ]
+      },
+      {
+        "enunciado": "Carro elétrico faz 110 km com desempenho 5 km/kWh, recarregando a 220 V e 20 A. Quantas horas para recarregar?",
+        "resolucao": [
+          "Energia gasta = 110/5 = 22 kWh.",
+          "Potência de recarga = U·I = 220×20 = 4400 W = 4,4 kW.",
+          "t = E/P = 22/4,4 = 5 h (letra D)."
+        ]
+      }
+    ],
+    "pegadinha": "Respeite as unidades: kWh usa kW e HORA; joule usa W e segundo. Não misture.",
+    "atalho": "E = P·t. P = U·I = U²/R = R·I². Conta de luz em kWh (kW × hora).",
+    "formulas": [
+      {
+        "rotulo": "Energia",
+        "latex": "E=P\\cdot t"
+      },
+      {
+        "rotulo": "Potência",
+        "latex": "P=U\\cdot I=\\dfrac{U^{2}}{R}=R\\,I^{2}"
+      }
+    ]
+  },
+  "Carga elétrica e baterias": {
+    "aula": "Eletrodinâmica II e Energia",
+    "teoria": [
+      "Carga elétrica: Q = I·t, medida em coulomb (A·s). As questões costumam dar em ampère-hora (Ah) ou mAh — é a mesma carga, só outra unidade (converta hora→segundo, mA→A).",
+      "A capacidade de uma bateria em Ah diz por quanto tempo ela fornece uma corrente; combinada com a tensão, dá a energia armazenada."
+    ],
+    "como_cai": "Tempo para carregar uma bateria dada sua carga e a potência do carregador; converter mAh para coulomb.",
+    "questoes_resolvidas": [
+      {
+        "enunciado": "Bateria de 12 V e 100 Ah (fornece 12 J por coulomb) carregada por um gerador de 600 W. Quanto tempo?",
+        "resolucao": [
+          "Q = 100 Ah = 100×3600 = 360000 C.",
+          "Energia = 360000 C × 12 J/C = 4,32×10⁶ J.",
+          "t = E/P = 4,32×10⁶ / 600 = 7200 s = 2 h (letra B)."
+        ]
+      },
+      {
+        "enunciado": "Bateria de 1500 mAh. Qual a carga em coulomb?",
+        "resolucao": [
+          "1500 mAh = 1,5 Ah.",
+          "Q = 1,5 A × 3600 s = 5400 C."
+        ]
+      }
+    ],
+    "pegadinha": "Coulomb = A·segundo; Ah usa hora (×3600). E mAh precisa virar Ah (÷1000).",
+    "atalho": "Q = I·t (coulomb = A·s). Ah e mAh são a mesma carga em outra unidade.",
+    "formulas": [
+      {
+        "rotulo": "Carga elétrica",
+        "latex": "Q=I\\cdot t"
+      }
+    ]
+  },
+  "Potência dissipada": {
+    "aula": "Eletrodinâmica II e Energia",
+    "teoria": [
+      "A potência dissipada por efeito Joule sai de P = U·I. Quando se dá tensão e resistência, use P = U²/R.",
+      "Consequência importante: para a mesma tensão, MENOR resistência → MAIOR potência (o curto-circuito é o caso extremo: resistência quase nula, corrente enorme, muito calor)."
+    ],
+    "como_cai": "Corrente máxima do disjuntor de um chuveiro; comparar potência de aparelhos; escolher o chuveiro de maior potência (menor resistência).",
+    "questoes_resolvidas": [
+      {
+        "enunciado": "Chuveiro de 220 V e 6800 W. Corrente máxima do disjuntor (margem ~10%)?",
+        "resolucao": [
+          "I = P/U = 6800/220 ≈ 30,9 A.",
+          "Com ~10% de margem ≈ 34 A; um disjuntor de 30 A cairia no uso normal.",
+          "Escolher o disjuntor de 35 A."
+        ]
+      },
+      {
+        "enunciado": "Cinco chuveiros com tensões e resistências dadas. Qual tem maior potência elétrica?",
+        "resolucao": [
+          "P = U²/R: maior potência = maior tensão E menor resistência.",
+          "A tensão entra ao QUADRADO, então 220 V com R um pouco maior ainda supera 127 V com R menor.",
+          "O de maior tensão (220 V) com a menor resistência entre eles vence."
+        ]
+      }
+    ],
+    "pegadinha": "Maior resistência NÃO significa maior potência — é o contrário (P = U²/R). E a tensão pesa ao quadrado.",
+    "atalho": "P = U·I = U²/R. Mesma tensão: menor R → maior potência. Tensão conta ao quadrado."
+  },
+  "Placas solares": {
+    "aula": "Eletrodinâmica II e Energia",
+    "teoria": [
+      "Numa placa solar, a potência captada = irradiância (W/m²) × área × eficiência (fração aproveitada). Daí se acha a área necessária ou a potência gerada.",
+      "É um caso particular do modelo de potência: iguala-se a potência captada à potência requerida."
+    ],
+    "como_cai": "Área total de um parque solar; raio de uma lente convergente para alimentar um chuveiro.",
+    "questoes_resolvidas": [
+      {
+        "enunciado": "Parque solar de 150 MW; irradiância 1500 W/m², eficiência 20%. Área total dos painéis?",
+        "resolucao": [
+          "Potência aproveitada por m² = 1500 × 0,20 = 300 W/m².",
+          "Área = potência total / por m² = 150×10⁶ / 300 = 5×10⁵ m² (500 mil m², letra B)."
+        ]
+      },
+      {
+        "enunciado": "Lente convergente para um chuveiro de 2000 W; energia do Sol 1000 W/m², eficiência 50% (√π=1,8). Raio da lente?",
+        "resolucao": [
+          "Aproveitado = 1000×0,5 = 500 W/m² → área = 2000/500 = 4 m².",
+          "Área do círculo: A = πr² → r = √(4/π) = 2/√π = 2/1,8 ≈ 1,1 m (letra E)."
+        ]
+      }
+    ],
+    "atalho": "Potência captada = irradiância × área × eficiência. Iguale à potência necessária."
+  },
+  "Indução eletromagnética": {
+    "aula": "Eletrodinâmica II e Energia",
+    "teoria": [
+      "A VARIAÇÃO de um campo magnético induz uma corrente elétrica (Faraday); e, reciprocamente, uma corrente alternada induz campo magnético.",
+      "Macete do sentido: aproximando um polo, a espira induz o MESMO polo (repulsão, quer afastar); afastando, induz o polo OPOSTO (atração, quer trazer de volta). Depois usa-se a regra da mão direita para o sentido da corrente."
+    ],
+    "como_cai": "Obter uma corrente no mesmo sentido movendo/invertendo o ímã e a espira; e magneto-hipertermia (partículas agitadas por campo alternado esquentam por atrito).",
+    "questoes_resolvidas": [
+      {
+        "enunciado": "Como obter uma corrente no MESMO sentido da figura (ímã afastando gera um polo sul na espira)?",
+        "resolucao": [
+          "Para reproduzir o mesmo campo induzido (sul na face voltada ao ímã), preciso aproximar um polo SUL.",
+          "Aproximar o sul induz sul (repulsão) → mesmo sentido de corrente.",
+          "Alternativa: mover a espira e o ímã aproximando-os com a POLARIDADE INVERTIDA (sul)."
+        ]
+      },
+      {
+        "enunciado": "Magneto-hipertermia: nanopartículas magnéticas em campo alternado aquecem o tumor. Por quê?",
+        "resolucao": [
+          "O campo alternado faz as nanopartículas oscilarem/girarem.",
+          "Esse movimento gera ATRITO com as células, e o atrito transfere calor.",
+          "Resposta: o campo alternado faz as nanopartículas girarem, transferindo calor por atrito (letra D)."
+        ]
+      }
+    ],
+    "pegadinha": "O calor da magneto-hipertermia vem do ATRITO das partículas em movimento, não do campo 'fornecendo' calor.",
+    "atalho": "Campo magnético que VARIA induz corrente. Aproxima → mesmo polo (repele); afasta → polo oposto (atrai)."
+  },
+  "Temperatura, densidade e convecção": {
+    "aula": "Termologia e Termodinâmica",
+    "teoria": [
+      "Aumentar a temperatura DILATA a matéria (mesmo material, mesma massa, mais volume) → a densidade DIMINUI (d = m/V). Resfriar contrai → densidade AUMENTA.",
+      "Por isso o que está quente (menos denso) SOBE e o que está frio (mais denso) DESCE — são as correntes de convecção. É a base para posicionar aparelhos: ar-condicionado em CIMA (joga ar frio que desce); aquecedor embaixo (o ar quente sobe)."
+    ],
+    "como_cai": "Onde instalar ar-condicionado/aquecedor e onde colocar entrada/saída de água num reservatório, sempre respeitando a convecção.",
+    "questoes_resolvidas": [
+      {
+        "enunciado": "Por que instalar o ar-condicionado na parte SUPERIOR da parede minimiza o consumo de energia?",
+        "resolucao": [
+          "O ar frio é mais denso e desce; o ar quente é menos denso e sobe.",
+          "Colocando o aparelho em cima, o ar frio desce e o quente sobe para ser resfriado — cria a corrente de convecção.",
+          "Resposta: facilita a circulação das correntes de convecção (letra D)."
+        ]
+      },
+      {
+        "enunciado": "Reservatório aquecido na base: onde devem ficar a entrada de água fria e a saída de água quente (posições 1 a 6)?",
+        "resolucao": [
+          "A água quente (menos densa) sobe → sai no ponto MAIS ALTO (4).",
+          "A água fria (mais densa) desce e deve entrar perto do aquecedor, na base (3).",
+          "Resposta: entrada em 3 e saída em 4."
+        ]
+      }
+    ],
+    "atalho": "Quente = menos denso = sobe. Frio = mais denso = desce. Ar-condicionado em cima; aquecedor embaixo.",
+    "formulas": [
+      {
+        "rotulo": "Densidade",
+        "latex": "d=\\dfrac{m}{V}\\;\\;(\\uparrow T\\Rightarrow\\uparrow V\\Rightarrow\\downarrow d)"
+      }
+    ]
+  },
+  "Estados da matéria e mudanças de fase": {
+    "aula": "Termologia e Termodinâmica",
+    "teoria": [
+      "A temperatura mede o grau de agitação das moléculas. Sólido (moléculas juntas, pouca agitação), líquido (mais soltas, fluido) e gasoso (muito agitadas, ocupam todo o espaço) diferem por essa organização — não por trocar átomos.",
+      "Transições: fusão (sólido→líquido), vaporização (líquido→gasoso), condensação (gasoso→líquido), solidificação (líquido→sólido) e sublimação (sólido→gasoso direto). A vaporização tem 3 formas: EVAPORAÇÃO (lenta, espontânea, à temperatura ambiente), EBULIÇÃO (a 100 °C para a água) e CALEFAÇÃO (instantânea, superfície muito quente)."
+    ],
+    "como_cai": "Reconhecer que a mudança de fase é rearranjo espacial das moléculas (não muda o átomo); calor latente (ir e voltar exigem a mesma energia); e a distinção evaporação × condensação.",
+    "questoes_resolvidas": [
+      {
+        "enunciado": "As transições sólido/líquido/gasoso (Platão) estão associadas, em nível microscópico, a quê?",
+        "resolucao": [
+          "Não há troca de átomos, transmutação nem mudança de isótopos — o átomo é o mesmo.",
+          "Muda a ORGANIZAÇÃO espacial das moléculas (grau de agitação/arranjo).",
+          "Resposta: mudança da estrutura espacial formada pelos constituintes do material (letra D)."
+        ]
+      },
+      {
+        "enunciado": "Em dias úmidos, o incômodo mencionado (temperatura do ambiente inferior à do corpo) deve-se a quê?",
+        "resolucao": [
+          "Se o ambiente é MAIS FRIO que a pele, o vapor não pode CONDENSAR ao tocá-la (condensação exige queda de temperatura).",
+          "O ar úmido já está saturado de vapor, então o SUOR tem mais dificuldade para EVAPORAR (e o corpo não se resfria).",
+          "Resposta: o suor apresenta maior dificuldade para evaporar (letra B)."
+        ]
+      }
+    ],
+    "pegadinha": "Mudar de fase não troca átomos nem isótopos. E em dia úmido o problema é a evaporação dificultada — não condensação na pele (a pele está mais quente que o ar).",
+    "atalho": "Sólido→líquido→gasoso = mais agitação. Vaporização: evaporação (lenta), ebulição (100 °C), calefação (instantânea)."
+  },
+  "Termodinâmica (1ª e 2ª leis)": {
+    "aula": "Termologia e Termodinâmica",
+    "teoria": [
+      "1ª lei: o calor fornecido a um gás vira trabalho (expansão) mais variação da energia interna: Q = τ + ΔU (a energia interna é proporcional à temperatura). Casos: ISOTÉRMICA (ΔU=0, todo calor vira trabalho); ADIABÁTICA (Q=0 → o trabalho é feito à custa da energia interna, então expandir ESFRIA o gás).",
+      "2ª lei: o calor flui espontaneamente da fonte QUENTE para a FRIA, até o equilíbrio térmico (sem diferença de temperatura, cessa o fluxo)."
+    ],
+    "como_cai": "Gráficos pressão×volume distinguindo isoterma de adiabática; identificar em que etapa há absorção/liberação de calor; explicar resfriamento por expansão adiabática (desodorante, nitrogênio líquido).",
+    "questoes_resolvidas": [
+      {
+        "enunciado": "Por que a expansão ADIABÁTICA resfria o nitrogênio (N₂)?",
+        "resolucao": [
+          "Adiabática: Q = 0, logo τ + ΔU = 0 → ΔU = −τ.",
+          "Se há expansão (trabalho positivo), a energia interna DIMINUI → a temperatura cai.",
+          "Resposta: o trabalho está associado diretamente à variação da energia interna (não à troca de calor)."
+        ]
+      },
+      {
+        "enunciado": "No ciclo Diesel (P×V, duas etapas adiabáticas), em qual etapa o calor é absorvido?",
+        "resolucao": [
+          "As duas adiabáticas (mesmo formato de curva) são A→B e C→D (Q=0).",
+          "B→C: volume aumenta à mesma pressão → temperatura sobe e há trabalho → calor ABSORVIDO (Q>0).",
+          "Resposta: o calor é absorvido em B→C."
+        ]
+      }
+    ],
+    "pegadinha": "Na adiabática não há troca de calor (Q=0): a expansão esfria o gás porque consome energia interna, não porque 'perde calor'.",
+    "atalho": "Q = τ + ΔU. Isotérmica: ΔU=0. Adiabática: Q=0 → expandir esfria. Calor vai do quente ao frio.",
+    "formulas": [
+      {
+        "rotulo": "1ª lei da termodinâmica",
+        "latex": "Q=\\tau+\\Delta U"
+      }
+    ]
+  },
+  "Calor específico": {
+    "aula": "Calorimetria",
+    "teoria": [
+      "Calor específico (c) é uma propriedade de cada material: a energia necessária para mudar a temperatura. Pense nele como RESISTÊNCIA à mudança de temperatura — alto c muda pouco a temperatura mesmo absorvendo muito calor; baixo c aquece/esfria fácil.",
+      "A água tem c alto (1 cal/g·°C); o ferro, baixo (~0,11) — por isso a panela esquenta rápido e a água demora. A conta usa Q = m·c·ΔT; respeite as unidades (cal/J, g/kg)."
+    ],
+    "como_cai": "Escolher a propriedade de um fluido (alto calor específico para absorver calor) e cálculos diretos com Q = m·c·ΔT.",
+    "questoes_resolvidas": [
+      {
+        "enunciado": "Qual propriedade o fluido arrefecedor de um motor deve ter para resfriá-lo com maior eficiência?",
+        "resolucao": [
+          "Ele precisa absorver muito calor do motor sem esquentar rápido (senão iguala a temperatura e para de trocar calor).",
+          "Isso é ter ALTO calor específico.",
+          "Resposta: alto calor específico (letra A)."
+        ]
+      },
+      {
+        "enunciado": "Queimando 2,5 g de castanha (70 kcal/10 g, 50% aproveitado) aquece-se 350 g de água (c=1) a 20 °C. Temperatura final?",
+        "resolucao": [
+          "Energia aproveitada: 70·(2,5/10)·0,5 = 8,75 kcal = 8750 cal.",
+          "Q = m·c·ΔT → 8750 = 350·1·ΔT → ΔT = 25 °C.",
+          "Temperatura final = 20 + 25 = 45 °C (cuidado: pede a FINAL)."
+        ]
+      }
+    ],
+    "pegadinha": "Cuidado: variação × temperatura FINAL (some à inicial). Converta kcal→cal, kg→g conforme a fórmula.",
+    "atalho": "c = resistência a mudar de temperatura. Q = m·c·ΔT. Alto c → aquece devagar.",
+    "formulas": [
+      {
+        "rotulo": "Equação fundamental da calorimetria",
+        "latex": "Q=m\\cdot c\\cdot\\Delta T"
+      }
+    ]
+  },
+  "Condutividade térmica": {
+    "aula": "Calorimetria",
+    "teoria": [
+      "Condutividade térmica é a rapidez com que um material transmite calor. Alta (metais) → o calor passa rápido (encostou, queimou). Baixa (madeira, cerâmica, vidro) → retém o calor (cabo de madeira não queima a mão, mesmo quente).",
+      "É diferente do calor específico: aqui importa a VELOCIDADE do fluxo de calor, não a energia para mudar a temperatura."
+    ],
+    "como_cai": "Por que o cabo de madeira não queima; e qual material mantém o alimento aquecido por mais tempo (menor condutividade).",
+    "questoes_resolvidas": [
+      {
+        "enunciado": "Por que tocar o cabo de madeira e não a base de metal da panela (ambos em equilíbrio térmico)?",
+        "resolucao": [
+          "Mesma temperatura, mas a madeira transmite calor devagar (baixa condutividade) e o metal, rápido (alta).",
+          "O metal transfere calor mais rápido à mão.",
+          "Resposta: o metal tem maior condutividade térmica."
+        ]
+      },
+      {
+        "enunciado": "Para MANTER um alimento aquecido por mais tempo (mesma espessura), qual material usar?",
+        "resolucao": [
+          "Manter aquecido = não deixar o calor escapar.",
+          "Escolher o de MENOR condutividade térmica (a cerâmica).",
+          "Resposta: cerâmica (letra E)."
+        ]
+      }
+    ],
+    "atalho": "Alta condutividade = passa calor rápido (metal). Baixa = retém (madeira/cerâmica). Manter quente → baixa condutividade."
+  },
+  "Aquecimento elétrico (potência × calorimetria)": {
+    "aula": "Calorimetria",
+    "teoria": [
+      "Modelo que junta eletrodinâmica e calorimetria, sempre em DUAS etapas: (1) energia elétrica E = P·t; (2) calorimetria Q = m·c·ΔT (com E = Q).",
+      "Truque do tempo: quando dão vazão (L/min) e não o tempo, escolha um tempo cômodo (ex.: 1 minuto) e use a MESMA base nas duas etapas."
+    ],
+    "como_cai": "Chuveiros, duchas, aquários e microondas: achar variação de temperatura, potência, corrente do disjuntor ou rendimento.",
+    "questoes_resolvidas": [
+      {
+        "enunciado": "Aquário de 50 L com aquecedor de 50 W desligado por 1 h; água c=4 kJ/kg·K, densidade 1 kg/L. Queda de temperatura?",
+        "resolucao": [
+          "Etapa 1: E = P·t = 50 × 3600 = 180000 J = 180 kJ.",
+          "Etapa 2: Q = m·c·ΔT → 180 = 50·4·ΔT → ΔT = 0,9 °C (letra C)."
+        ]
+      },
+      {
+        "enunciado": "Microondas de 800 W aquece 500 g de água (c=1) e vidro de 300 g (c=0,2) de 6 °C a 40 °C em 2,5 min. Percentual convertido em calor?",
+        "resolucao": [
+          "Calorimetria: Q_água = 500·1·34 = 17000 cal; Q_vidro = 300·0,2·34 = 2040 cal; total ≈ 19040 cal ≈ 80000 J.",
+          "Energia do forno: E = 800 × 150 s = 120000 J.",
+          "Rendimento = 80000/120000 ≈ 66,7% (letra D)."
+        ]
+      }
+    ],
+    "pegadinha": "Use a mesma base de tempo nas duas etapas; converta cal↔J antes de comparar; com dois materiais, calcule o calor de cada um e some.",
+    "atalho": "Etapa 1: E = P·t. Etapa 2: Q = m·c·ΔT (E = Q). Vazão sem tempo → escolha 1 min e mantenha."
+  },
+  "Propagação de calor": {
+    "aula": "Calorimetria",
+    "teoria": [
+      "Calor é FLUXO de energia térmica, sempre do corpo mais quente para o mais frio. Frio não 'entra' nem 'se move' — é apenas a sensação do calor saindo.",
+      "Três formas: CONDUÇÃO (contato, molécula a molécula), CONVECÇÃO (deslocamento de massa de ar/água) e IRRADIAÇÃO (ondas eletromagnéticas, infravermelho — como o calor do Sol chega pelo vácuo)."
+    ],
+    "como_cai": "Corrigir 'frio entrando' (cobertor/porta = minimizar perda de calor); identificar mecanismos (Sol→Terra = irradiação; brisa = convecção); geladeira.",
+    "questoes_resolvidas": [
+      {
+        "enunciado": "A porta e os cobertores do jingle têm, respectivamente, as funções de?",
+        "resolucao": [
+          "Frio não entra: o que existe é calor saindo. Porta e cobertor não aquecem.",
+          "Ambos MINIMIZAM a perda de calor (isolam).",
+          "Resposta: minimizar a perda de calor (letra C)."
+        ]
+      },
+      {
+        "enunciado": "Mecanismos de troca entre o Sol e a ilha de calor, e entre a ilha e a brisa marítima?",
+        "resolucao": [
+          "Sol → ilha: há vácuo, só por ondas → IRRADIAÇÃO.",
+          "Ilha → brisa: o vento (matéria em movimento) carrega o calor → CONVECÇÃO.",
+          "Resposta: irradiação e convecção (letra A)."
+        ]
+      }
+    ],
+    "pegadinha": "Frio não se move nem 'entra' — só o calor flui (quente→frio). Cobertor não aquece: retém o calor do corpo.",
+    "atalho": "Calor = fluxo de energia (quente→frio). Condução (contato), convecção (movimento), irradiação (ondas, vácuo)."
+  }
+}
