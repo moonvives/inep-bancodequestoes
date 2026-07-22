@@ -177,10 +177,10 @@ def construir_html(dados: dict) -> str:
 <style>
 :root {{
   --navy: #1b2a4a;
-  --azul: #2f6fed; --azul-bg: #eef4ff;
-  --ambar: #b45309; --ambar-bg: #fff7ed;
-  --verde: #047857; --verde-bg: #ecfdf5;
-  --cinza: #5b6472; --linha: #d9dee8;
+  --azul: #2f6fed;
+  --ambar: #b45309;
+  --verde: #047857;
+  --cinza: #5b6472; --linha: #d9dee8; --linha-suave: #e8ebf1;
 }}
 @page {{
   size: A4; margin: 20mm 17mm 18mm 17mm;
@@ -198,23 +198,28 @@ def construir_html(dados: dict) -> str:
 @page sumario {{ @top-right {{ content: none }} }}
 
 * {{ box-sizing: border-box; margin: 0; padding: 0; }}
-body {{ font-family: "DejaVu Sans", sans-serif; font-size: 9.3pt;
-       line-height: 1.52; color: #232936; }}
+body {{ font-family: "DejaVu Serif", serif; font-size: 9.2pt;
+       line-height: 1.55; color: #262b35; }}
+h1, h2, h3, .box-rotulo, .q-cab, .q-res-rotulo, .chip, .toc-cap, .toc-top,
+.cap-num, .cap-topicos, .capa, .f-topico {{ font-family: "DejaVu Sans", sans-serif; }}
 
-/* ---------- capa ---------- */
-.capa {{ page: capa; width: 210mm; height: 297mm; background: var(--navy);
-        color: #fff; padding: 30mm 24mm; display: flex; flex-direction: column; }}
+/* ---------- capa (clara, para impressão) ---------- */
+.capa {{ page: capa; width: 210mm; height: 297mm; background: #fff;
+        color: var(--navy); padding: 32mm 26mm; display: flex; flex-direction: column; }}
 .capa .marca {{ font-size: 9pt; letter-spacing: 0.35em; text-transform: uppercase;
-               color: #9fb4dd; border-bottom: 1px solid #3a4c73; padding-bottom: 6mm; }}
-.capa h1 {{ margin-top: 42mm; font-size: 34pt; line-height: 1.12; font-weight: bold; }}
-.capa h1 .fina {{ color: #9fb4dd; font-weight: normal; }}
-.capa .sub {{ margin-top: 8mm; font-size: 12pt; color: #c9d6ef; max-width: 130mm; line-height: 1.5; }}
-.capa .stats {{ margin-top: 16mm; display: flex; gap: 10mm; }}
-.capa .stat {{ border-left: 2px solid var(--azul); padding-left: 4mm; }}
-.capa .stat b {{ display: block; font-size: 17pt; }}
-.capa .stat span {{ font-size: 8pt; color: #9fb4dd; text-transform: uppercase; letter-spacing: 0.1em; }}
-.capa .rodape {{ margin-top: auto; font-size: 8.5pt; color: #7e93bf;
-                border-top: 1px solid #3a4c73; padding-top: 5mm; }}
+               color: var(--azul); border-bottom: 2px solid var(--navy); padding-bottom: 6mm; }}
+.capa h1 {{ margin-top: 40mm; font-size: 34pt; line-height: 1.12; font-weight: bold;
+           color: var(--navy); }}
+.capa h1 .fina {{ color: var(--cinza); font-weight: normal; }}
+.capa .sub {{ margin-top: 8mm; font-size: 11.5pt; color: var(--cinza);
+             max-width: 132mm; line-height: 1.55; font-family: "DejaVu Serif", serif; }}
+.capa .stats {{ margin-top: 16mm; display: flex; gap: 12mm; }}
+.capa .stat {{ border-left: 1.5px solid var(--azul); padding-left: 4mm; }}
+.capa .stat b {{ display: block; font-size: 17pt; color: var(--navy); }}
+.capa .stat span {{ font-size: 7.8pt; color: var(--cinza); text-transform: uppercase;
+                   letter-spacing: 0.12em; }}
+.capa .rodape {{ margin-top: auto; font-size: 8.3pt; color: #8a93a3;
+                border-top: 1px solid var(--linha); padding-top: 5mm; }}
 
 /* ---------- sumário ---------- */
 .sumario {{ page: sumario; page-break-before: always; }}
@@ -232,49 +237,54 @@ body {{ font-family: "DejaVu Sans", sans-serif; font-size: 9.3pt;
 
 /* ---------- capítulos ---------- */
 .capitulo {{ page-break-before: always; }}
-.cap-banner {{ background: var(--navy); color: #fff; border-radius: 3mm;
-              padding: 9mm 9mm 8mm; margin-bottom: 8mm; }}
-.cap-num {{ font-size: 8.5pt; letter-spacing: 0.3em; text-transform: uppercase; color: #9fb4dd; }}
-.cap-banner h1 {{ font-size: 21pt; margin: 1.5mm 0 3mm; string-set: capitulo content(); }}
-.cap-topicos {{ font-size: 8.6pt; color: #c9d6ef; line-height: 1.6; }}
+.cap-banner {{ border-bottom: 2.5px solid var(--navy); padding-bottom: 5mm;
+              margin-bottom: 8mm; }}
+.cap-num {{ font-size: 8.5pt; letter-spacing: 0.3em; text-transform: uppercase;
+           color: var(--azul); }}
+.cap-banner h1 {{ font-size: 22pt; margin: 1.5mm 0 3mm; color: var(--navy);
+                 string-set: capitulo content(); }}
+.cap-topicos {{ font-size: 8.4pt; color: var(--cinza); line-height: 1.6; }}
 
 .topico {{ margin-bottom: 9mm; }}
-h2 {{ font-size: 13.5pt; color: var(--navy); margin: 7mm 0 3.2mm;
-     padding-bottom: 1.6mm; border-bottom: 1.5px solid var(--linha);
+h2 {{ font-size: 13pt; color: var(--navy); margin: 7mm 0 3.2mm;
+     padding-bottom: 1.6mm; border-bottom: 1px solid var(--linha);
      page-break-after: avoid; }}
-.h2-idx {{ color: var(--azul); margin-right: 3mm; font-size: 11pt; }}
-p.teoria {{ margin: 0 0 2.6mm; text-align: justify; }}
+.h2-idx {{ color: var(--azul); margin-right: 3mm; font-size: 10.5pt; }}
+p.teoria {{ margin: 0 0 2.6mm; text-align: justify; hyphens: auto; }}
 
-/* ---------- caixas ---------- */
-.box {{ border-radius: 2mm; padding: 3.2mm 4mm 3.2mm 4.5mm; margin: 3.5mm 0;
+/* ---------- caixas (fundo branco, borda colorida) ---------- */
+.box {{ background: #fff; border: 1px solid var(--linha-suave);
+       border-radius: 1.5mm; padding: 3mm 4mm 3mm 4.5mm; margin: 3.5mm 0;
        page-break-inside: avoid; }}
-.box p {{ margin: 0; }}
-.box-rotulo {{ font-size: 7.6pt; font-weight: bold; letter-spacing: 0.12em;
+.box p {{ margin: 0; font-size: 8.9pt; }}
+.box-rotulo {{ font-size: 7.5pt; font-weight: bold; letter-spacing: 0.14em;
               text-transform: uppercase; margin-bottom: 1.4mm; }}
-.comocai {{ background: var(--azul-bg); border-left: 1.2mm solid var(--azul); }}
+.comocai {{ border-left: 1mm solid var(--azul); }}
 .comocai .box-rotulo {{ color: var(--azul); }}
-.pegadinha {{ background: var(--ambar-bg); border-left: 1.2mm solid var(--ambar); }}
+.pegadinha {{ border-left: 1mm solid var(--ambar); }}
 .pegadinha .box-rotulo {{ color: var(--ambar); }}
-.atalho {{ background: var(--verde-bg); border-left: 1.2mm solid var(--verde); }}
+.atalho {{ border-left: 1mm solid var(--verde); }}
 .atalho .box-rotulo {{ color: var(--verde); }}
 
 /* ---------- questões ---------- */
-.questao {{ border: 1px solid var(--linha); border-radius: 2mm; margin: 3.5mm 0;
+.questao {{ border: 1px solid var(--linha); border-radius: 1.5mm; margin: 3.5mm 0;
            page-break-inside: avoid; overflow: hidden; }}
-.q-cab {{ background: #f2f5fa; color: var(--navy); font-weight: bold;
-         font-size: 8pt; letter-spacing: 0.1em; text-transform: uppercase;
-         padding: 2mm 4mm; border-bottom: 1px solid var(--linha); }}
-.q-enunciado {{ padding: 3mm 4mm 1mm; font-style: italic; color: #38404f; }}
-.q-res-rotulo {{ padding: 2mm 4mm 0; font-size: 7.6pt; font-weight: bold;
-                color: #8a93a3; letter-spacing: 0.12em; text-transform: uppercase; }}
+.q-cab {{ color: var(--navy); font-weight: bold;
+         font-size: 8pt; letter-spacing: 0.12em; text-transform: uppercase;
+         padding: 2.2mm 4mm 1.8mm; border-bottom: 1px solid var(--linha-suave); }}
+.q-enunciado {{ padding: 2.6mm 4mm 1mm; font-style: italic; color: #3c4454;
+               font-size: 8.9pt; }}
+.q-res-rotulo {{ padding: 2mm 4mm 0; font-size: 7.4pt; font-weight: bold;
+                color: #8a93a3; letter-spacing: 0.14em; text-transform: uppercase; }}
 .q-passos {{ padding: 1.5mm 4mm 3.2mm 9mm; }}
-.q-passos li {{ margin-bottom: 1.2mm; }}
-.q-passos li::marker {{ color: var(--azul); font-weight: bold; }}
+.q-passos li {{ margin-bottom: 1.2mm; font-size: 8.9pt; }}
+.q-passos li::marker {{ color: var(--azul); font-weight: bold;
+                       font-family: "DejaVu Sans", sans-serif; }}
 
 /* ---------- fórmulas ---------- */
 .formulas {{ display: flex; flex-wrap: wrap; gap: 2.5mm; margin: 3.5mm 0; }}
-.chip {{ border: 1px solid var(--linha); border-top: 0.8mm solid var(--navy);
-        border-radius: 1.5mm; padding: 2.2mm 4mm; background: #fbfcfe;
+.chip {{ border: 1px solid var(--linha); border-top: 0.7mm solid var(--navy);
+        border-radius: 1.5mm; padding: 2.2mm 4mm; background: #fff;
         page-break-inside: avoid; }}
 .chip-rotulo {{ font-size: 7.3pt; color: var(--cinza); text-transform: uppercase;
                letter-spacing: 0.08em; margin-bottom: 1mm; }}
@@ -296,7 +306,8 @@ sub, sup {{ font-size: 68%; }}
 .form-tabela {{ width: 100%; border-collapse: collapse; }}
 .form-tabela td {{ border: 1px solid var(--linha); padding: 1.8mm 3mm; vertical-align: middle; }}
 .f-rotulo {{ width: 34%; font-size: 8.6pt; }}
-.f-formula {{ width: 38%; font-size: 10pt; color: var(--navy); }}
+.f-formula {{ width: 38%; font-size: 10pt; color: var(--navy);
+             font-family: "DejaVu Sans", sans-serif; }}
 .f-topico {{ width: 28%; font-size: 7.8pt; color: var(--cinza); }}
 </style></head><body>
 
