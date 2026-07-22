@@ -382,6 +382,18 @@ META_QUIMICA = {
 }
 
 
+META_BIOLOGIA = {
+    "doc_title": "Biologia para o ENEM — Fisiologia Humana",
+    "marca": "Biologia  ·  Ciências da Natureza",
+    "titulo": "Biologia para o ENEM",
+    "subtitulo": "Fisiologia Humana I e II",
+    "sub": ("Teoria essencial, como cada tema cai na prova, questões-modelo "
+            "resolvidas passo a passo, pegadinhas e atalhos."),
+    "rotulo_cap": "Aula",
+    "rotulo_cap_plural": "aulas",
+}
+
+
 def gerar(dados_path: Path, saida: Path, meta: dict) -> None:
     dados = json.loads(dados_path.read_text(encoding="utf-8"))
     html_doc = construir_html(dados, meta)
@@ -396,7 +408,7 @@ def gerar(dados_path: Path, saida: Path, meta: dict) -> None:
 def main() -> None:
     import argparse
     p = argparse.ArgumentParser(description="Gera PDF de resumo do ENEM.")
-    p.add_argument("--materia", choices=["fisica", "quimica"], default="fisica")
+    p.add_argument("--materia", choices=["fisica", "quimica", "biologia"], default="fisica")
     p.add_argument("--dados", type=Path, help="JSON de conteúdo (opcional).")
     p.add_argument("--saida", type=Path, help="PDF de saída (opcional).")
     args = p.parse_args()
@@ -405,6 +417,10 @@ def main() -> None:
         meta = META_QUIMICA
         dados_path = args.dados or (RAIZ / "scripts" / "resumo-quimica" / "dados.json")
         saida = args.saida or (RAIZ / "public" / "materiais" / "resumo-quimica-enem.pdf")
+    elif args.materia == "biologia":
+        meta = META_BIOLOGIA
+        dados_path = args.dados or (RAIZ / "scripts" / "resumo-biologia" / "dados.json")
+        saida = args.saida or (RAIZ / "public" / "materiais" / "resumo-biologia-enem.pdf")
     else:
         meta = META_FISICA
         dados_path = args.dados or (BASE / "dados.json")
