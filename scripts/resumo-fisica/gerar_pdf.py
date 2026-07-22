@@ -83,12 +83,16 @@ def slug(t: str) -> str:
     return s.strip("-")
 
 
-def construir_html(dados: dict) -> str:
+def construir_html(dados: dict, meta: dict) -> str:
     capitulos: dict[str, list[tuple[str, dict]]] = {}
     for titulo, topico in dados.items():
         if titulo.startswith("_"):
             continue
         capitulos.setdefault(topico["aula"], []).append((titulo, topico))
+
+    tem_formulas = any(top.get("formulas")
+                       for tops in capitulos.values() for _, top in tops)
+    multi_cap = len(capitulos) > 1
 
     # ---- sumário
     itens_toc = []
@@ -106,10 +110,11 @@ def construir_html(dados: dict) -> str:
     # ---- corpo
     corpo = []
     for c_i, (aula, topicos) in enumerate(capitulos.items(), 1):
+        rotulo_cap = f'{meta["rotulo_cap"]} {c_i}' if multi_cap else meta["rotulo_cap"]
         corpo.append(f'''
         <section class="capitulo" id="cap-{slug(aula)}">
           <div class="cap-banner">
-            <div class="cap-num">Aula {c_i}</div>
+            <div class="cap-num">{esc(rotulo_cap)}</div>
             <h1>{esc(aula)}</h1>
             <div class="cap-topicos">{" · ".join(esc(t) for t, _ in topicos)}</div>
           </div>''')
@@ -171,9 +176,31 @@ def construir_html(dados: dict) -> str:
     n_questoes = sum(len(top.get("questoes_resolvidas", []))
                      for tops in capitulos.values() for _, top in tops)
 
+    # ---- estatísticas da capa
+    stats = []
+    if multi_cap:
+        stats.append((len(capitulos), meta["rotulo_cap_plural"]))
+    stats.append((n_topicos, "tópicos"))
+    stats.append((n_questoes, "questões resolvidas"))
+    stats_html = "".join(
+        f'<div class="stat"><b>{n}</b><span>{esc(rot)}</span></div>' for n, rot in stats)
+
+    # ---- formulário rápido (só se houver fórmulas)
+    if tem_formulas:
+        toc_form = ('<div class="toc-cap"><a href="#formulario">'
+                    '<span class="toc-num">★</span> Formulário rápido</a></div>')
+        secao_form = f'''<section class="formulario" id="formulario">
+  <h1>Formulário rápido</h1>
+  <p class="intro">Todas as fórmulas do material, agrupadas por aula, para revisão de véspera.</p>
+  {"".join(linhas_form)}
+</section>'''
+    else:
+        toc_form = ""
+        secao_form = ""
+
     return f"""<!DOCTYPE html>
 <html lang="pt-BR"><head><meta charset="utf-8">
-<title>Física para o ENEM — Resumo Completo</title>
+<title>{esc(meta["doc_title"])}</title>
 <style>
 :root {{
   --navy: #1b2a4a;
@@ -312,44 +339,78 @@ sub, sup {{ font-size: 68%; }}
 </style></head><body>
 
 <div class="capa">
-  <div class="marca">Física &nbsp;·&nbsp; Ciências da Natureza</div>
-  <h1>Física para o ENEM<br><span class="fina">Resumo Completo</span></h1>
-  <div class="sub">Teoria essencial, como cada tema cai na prova, questões-modelo
-    resolvidas passo a passo, pegadinhas, atalhos e formulário rápido.</div>
-  <div class="stats">
-    <div class="stat"><b>{len(capitulos)}</b><span>aulas</span></div>
-    <div class="stat"><b>{n_topicos}</b><span>tópicos</span></div>
-    <div class="stat"><b>{n_questoes}</b><span>questões resolvidas</span></div>
-  </div>
+  <div class="marca">{esc(meta["marca"])}</div>
+  <h1>{esc(meta["titulo"])}<br><span class="fina">{esc(meta["subtitulo"])}</span></h1>
+  <div class="sub">{esc(meta["sub"])}</div>
+  <div class="stats">{stats_html}</div>
   <div class="rodape">Material de estudo sintetizado das videoaulas · uso pessoal · {hoje}</div>
 </div>
 
 <section class="sumario">
   <h1>Sumário</h1>
   {"".join(itens_toc)}
-  <div class="toc-cap"><a href="#formulario"><span class="toc-num">★</span> Formulário rápido</a></div>
+  {toc_form}
 </section>
 
 {"".join(corpo)}
 
-<section class="formulario" id="formulario">
-  <h1>Formulário rápido</h1>
-  <p class="intro">Todas as fórmulas do material, agrupadas por aula, para revisão de véspera.</p>
-  {"".join(linhas_form)}
-</section>
+{secao_form}
 
 </body></html>"""
 
 
-def main() -> None:
-    dados = json.loads((BASE / "dados.json").read_text(encoding="utf-8"))
-    html_doc = construir_html(dados)
-    (BASE / "resumo.html").write_text(html_doc, encoding="utf-8")
+META_FISICA = {
+    "doc_title": "Física para o ENEM — Resumo Completo",
+    "marca": "Física  ·  Ciências da Natureza",
+    "titulo": "Física para o ENEM",
+    "subtitulo": "Resumo Completo",
+    "sub": ("Teoria essencial, como cada tema cai na prova, questões-modelo "
+            "resolvidas passo a passo, pegadinhas, atalhos e formulário rápido."),
+    "rotulo_cap": "Aula",
+    "rotulo_cap_plural": "aulas",
+}
+
+META_QUIMICA = {
+    "doc_title": "Química para o ENEM — Fundamentos da Química",
+    "marca": "Química  ·  Ciências da Natureza",
+    "titulo": "Química para o ENEM",
+    "subtitulo": "Fundamentos da Química",
+    "sub": ("Teoria essencial, como cada tema cai na prova, questões-modelo "
+            "resolvidas passo a passo, pegadinhas e atalhos."),
+    "rotulo_cap": "Aula",
+    "rotulo_cap_plural": "aulas",
+}
+
+
+def gerar(dados_path: Path, saida: Path, meta: dict) -> None:
+    dados = json.loads(dados_path.read_text(encoding="utf-8"))
+    html_doc = construir_html(dados, meta)
+    (dados_path.parent / "resumo.html").write_text(html_doc, encoding="utf-8")
 
     from weasyprint import HTML
-    SAIDA.parent.mkdir(parents=True, exist_ok=True)
-    HTML(string=html_doc, base_url=str(BASE)).write_pdf(str(SAIDA))
-    print(f"PDF gerado: {SAIDA}")
+    saida.parent.mkdir(parents=True, exist_ok=True)
+    HTML(string=html_doc, base_url=str(dados_path.parent)).write_pdf(str(saida))
+    print(f"PDF gerado: {saida}")
+
+
+def main() -> None:
+    import argparse
+    p = argparse.ArgumentParser(description="Gera PDF de resumo do ENEM.")
+    p.add_argument("--materia", choices=["fisica", "quimica"], default="fisica")
+    p.add_argument("--dados", type=Path, help="JSON de conteúdo (opcional).")
+    p.add_argument("--saida", type=Path, help="PDF de saída (opcional).")
+    args = p.parse_args()
+
+    if args.materia == "quimica":
+        meta = META_QUIMICA
+        dados_path = args.dados or (RAIZ / "scripts" / "resumo-quimica" / "dados.json")
+        saida = args.saida or (RAIZ / "public" / "materiais" / "resumo-quimica-enem.pdf")
+    else:
+        meta = META_FISICA
+        dados_path = args.dados or (BASE / "dados.json")
+        saida = args.saida or SAIDA
+
+    gerar(dados_path, saida, meta)
 
 
 if __name__ == "__main__":
